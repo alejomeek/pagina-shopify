@@ -40,7 +40,7 @@
       "color_image_overlay": "#1A1A1A",
       "color_image_overlay_opacity": 20,
       "color_image_overlay_text_shadow": 20,
-      "type_header_font_family": "fraunces_n7",
+      "type_header_font_family": "inter_n4",
       "type_header_spacing": "25",
       "type_header_base_size": 50,
       "type_header_line_height": 1.1,
