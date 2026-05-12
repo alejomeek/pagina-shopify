@@ -23,10 +23,10 @@
             "link_text": "Explorar catálogo",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#DF2703",
+            "color_accent": "#df2703",
             "text_align": "vertical-center horizontal-left",
-            "image": "",
-            "image_mobile": "",
+            "image": "shopify://shop_images/a2516722-9ccd-4e56-b6fc-568d6174ff15.png",
+            "image_mobile": "shopify://shop_images/bc742d12-2cb0-4093-a678-3694db7aad67.png",
             "parallax_direction": "top",
             "overlay_opacity": 30
           }
@@ -42,16 +42,19 @@
             "link_text": "Ver juegos de mesa",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#DF2703",
+            "color_accent": "#df2703",
             "text_align": "vertical-center horizontal-left",
-            "image": "",
-            "image_mobile": "",
+            "image": "shopify://shop_images/30c6c99c-15f3-47af-bbfd-4964ba7fa407.png",
+            "image_mobile": "shopify://shop_images/d01b3a00-b8e2-4573-944a-e460f7472c65.png",
             "parallax_direction": "top",
             "overlay_opacity": 30
           }
         }
       },
-      "block_order": ["slide-1", "slide-2"],
+      "block_order": [
+        "slide-1",
+        "slide-2"
+      ],
       "settings": {
         "section_height": "650px",
         "mobile_height": "400px",
@@ -97,13 +100,19 @@
           }
         }
       },
-      "block_order": ["badge-envio", "badge-seguridad", "badge-regalo", "badge-catalogo"],
+      "block_order": [
+        "badge-envio",
+        "badge-seguridad",
+        "badge-regalo",
+        "badge-catalogo"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h2",
         "align_text": "center",
         "desktop_columns_per_row": 4,
-        "icon_color": "#1A1A1A",
+        "icon_color": "#1a1a1a",
+        "button_label": "",
         "button_link": "",
         "divider": false
       }
@@ -160,7 +169,14 @@
           }
         }
       },
-      "block_order": ["edad-0-1", "edad-1-3", "edad-3-5", "edad-5-7", "edad-7-12", "edad-12-99"],
+      "block_order": [
+        "edad-0-1",
+        "edad-1-3",
+        "edad-3-5",
+        "edad-5-7",
+        "edad-7-12",
+        "edad-12-99"
+      ],
       "settings": {
         "title": "Compra por edad",
         "heading_size": "h2",
@@ -275,7 +291,6 @@
         "text": "<p>Más de 500 juegos de mesa para noches que valen la pena.</p>",
         "button_label": "Ver juegos de mesa",
         "button_link": "/collections/juegos-de-mesa",
-        "image": "",
         "layout": "left",
         "height": 550,
         "framed": false,
@@ -288,7 +303,7 @@
       "settings": {
         "title": "Novedades",
         "heading_size": "h2",
-        "home_featured_products": "nuevos-ingresos",
+        "home_featured_products": "novedades",
         "per_row": 4,
         "rows": 2,
         "mobile_scrollable": true,
@@ -304,8 +319,8 @@
           "settings": {
             "icon": "5-stars",
             "testimonial": "<p>Excelente calidad y llegó súper rápido. Mi hijo quedó feliz con su juego de mesa. 100% recomendado.</p>",
-            "image": "",
-            "author": "María C. — Bogotá"
+            "author": "María C. — Bogotá",
+            "author_info": "Los Angeles, CA"
           }
         },
         "testimonio-2": {
@@ -313,8 +328,8 @@
           "settings": {
             "icon": "5-stars",
             "testimonial": "<p>Llevamos años comprando acá. Siempre encuentro material didáctico de calidad y el empaque para regalo es espectacular.</p>",
-            "image": "",
-            "author": "Carlos M. — Medellín"
+            "author": "Carlos M. — Medellín",
+            "author_info": "Los Angeles, CA"
           }
         },
         "testimonio-3": {
@@ -322,19 +337,23 @@
           "settings": {
             "icon": "5-stars",
             "testimonial": "<p>El rompecabezas que pedí llegó perfecto y en el mismo día. No compro juguetes en otro lado.</p>",
-            "image": "",
-            "author": "Paola R. — Bogotá"
+            "author": "Paola R. — Bogotá",
+            "author_info": "Los Angeles, CA"
           }
         }
       },
-      "block_order": ["testimonio-1", "testimonio-2", "testimonio-3"],
+      "block_order": [
+        "testimonio-1",
+        "testimonio-2",
+        "testimonio-3"
+      ],
       "settings": {
         "title": "Lo que dicen nuestros clientes",
         "heading_size": "h2",
         "align_text": "center",
         "round_images": true,
-        "color_background": "#FAF3E3",
-        "color_text": "#1A1A1A"
+        "color_background": "#faf3e3",
+        "color_text": "#1a1a1a"
       }
     }
   },
