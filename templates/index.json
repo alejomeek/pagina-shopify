@@ -9,386 +9,343 @@
  */
 {
   "sections": {
-    "shoppable-hero": {
-      "type": "shoppable-hero",
-      "blocks": {
-        "hotspot-1": {
-          "type": "hotspot",
-          "settings": {
-            "product": "the-riva-tank",
-            "vertical_position": 51,
-            "horizontal_position": 22,
-            "vertical_position_mobile": 50,
-            "horizontal_position_mobile": 50
-          }
-        },
-        "hotspot-2": {
-          "type": "hotspot",
-          "settings": {
-            "product": "the-lena-midi",
-            "vertical_position": 50,
-            "horizontal_position": 57,
-            "vertical_position_mobile": 35,
-            "horizontal_position_mobile": 55
-          }
-        },
-        "hotspot-3": {
-          "type": "hotspot",
-          "settings": {
-            "product": "the-cami",
-            "vertical_position": 73,
-            "horizontal_position": 75,
-            "vertical_position_mobile": 55,
-            "horizontal_position_mobile": 75
-          }
-        }
-      },
-      "block_order": ["hotspot-1", "hotspot-2", "hotspot-3"],
-      "name": "t:kit.labels.shoppable_hero",
-      "settings": {
-        "image": "",
-        "text_protection": 20,
-        "preheading": "",
-        "heading": "Easy by design",
-        "heading_size": "lg",
-        "text": "Soft texture, effortless movement, and warm-weather pieces designed to be worn on repeat.",
-        "button_label": "Shop Linen",
-        "button_link": "",
-        "color_accent": "#ffffff",
-        "text_alignment": "left",
-        "text_position": "bottom-left",
-        "hotspot_style": "plus",
-        "hotspot_color": "#ffffff"
-      }
-    },
-    "featured-collections": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": "2026-tops",
-            "title": "",
-            "focal_point": "center center"
-          }
-        },
-        "collection-2": {
-          "type": "collection",
-          "settings": {
-            "collection": "2026-bottoms",
-            "title": "",
-            "focal_point": "center center"
-          }
-        },
-        "collection-3": {
-          "type": "collection",
-          "settings": {
-            "collection": "2026-dresses",
-            "title": "",
-            "focal_point": "center center"
-          }
-        },
-        "collection-4": {
-          "type": "collection",
-          "settings": {
-            "collection": "2026-layers",
-            "title": "",
-            "focal_point": "center center"
-          }
-        }
-      },
-      "block_order": ["collection-1", "collection-2", "collection-3", "collection-4"],
-      "name": "t:sections.featured-collections.presets.collection_list.name",
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "divider": false,
-        "per_row": 4
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.featured_collection.name",
-      "settings": {
-        "title": "All New",
-        "heading_size": "h2",
-        "home_featured_products": "2026-new",
-        "per_row": 5,
-        "rows": 1,
-        "mobile_scrollable": true,
-        "view_all": false,
-        "divider": true
-      }
-    },
-    "promo-grid": {
-      "type": "promo-grid",
-      "blocks": {
-        "advanced-1": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Dresses for every day",
-            "heading_size": "h2",
-            "textarea": "Easy silhouettes for slow mornings, summer dinners, and everything in between.",
-            "cta_text1": "Shop Dresses",
-            "cta_link1": "",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "",
-            "video_url": "",
-            "width": "50",
-            "height": 800,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "rgba(0,0,0,0)",
-            "boxed": false,
-            "framed": false
-          }
-        },
-        "advanced-2": {
-          "type": "advanced",
-          "settings": {
-            "subheading": "",
-            "heading": "Thoughtful layers",
-            "heading_size": "h2",
-            "textarea": "Soft knits, relaxed tailoring, and lightweight pieces to throw on and go.",
-            "cta_text1": "Shop layers",
-            "cta_link1": "",
-            "cta_text2": "",
-            "cta_link2": "",
-            "image": "",
-            "video_url": "",
-            "width": "50",
-            "height": 800,
-            "text_align": "vertical-center horizontal-center",
-            "color_accent": "rgba(0,0,0,0)",
-            "boxed": false,
-            "framed": false
-          }
-        }
-      },
-      "block_order": ["advanced-1", "advanced-2"],
-      "name": "t:sections.promo-grid.presets.promotional_grid.name",
-      "settings": {
-        "full_width": true,
-        "gutter_size": 0,
-        "space_above": false,
-        "space_below": false
-      }
-    },
-    "featured-collection-2": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.featured_collection.name",
-      "settings": {
-        "title": "Everyday Essentials",
-        "heading_size": "h2",
-        "home_featured_products": "2026-the-linen-edit",
-        "per_row": 5,
-        "rows": 1,
-        "mobile_scrollable": true,
-        "view_all": true,
-        "divider": false
-      }
-    },
-    "hero-video": {
-      "type": "hero-video",
-      "name": "t:sections.hero-video.presets.video_hero.name",
-      "settings": {
-        "title": "Made to move with ease",
-        "title_size": 60,
-        "subheading": "Quiet texture, warm light, and pieces designed for slower days.",
-        "link_text": "Explore the lookbook",
-        "link": "",
-        "color_accent": "rgba(0,0,0,0)",
-        "text_align": "vertical-center horizontal-center",
-        "video_url": "https://www.youtube.com/watch?v=kAaV5gfdsG0",
-        "overlay_opacity": 0,
-        "section_height": "650px",
-        "mobile_height": "auto"
-      }
-    },
-    "text-and-image": {
-      "type": "text-and-image",
-      "name": "t:sections.text-and-image.presets.image_with_text.name",
-      "settings": {
-        "image": "",
-        "image_mask": "none",
-        "image2": "",
-        "image2_mask": "none",
-        "subtitle": "",
-        "title": "",
-        "heading_size": "h2",
-        "text": "<h2>Inside the journal</h2><p>Explore styling ideas, seasonal notes, and content-rich stories that bring our collections to life.</p>",
-        "button_label": "Read more",
-        "button_link": "",
-        "button_style": "primary",
-        "align_text": "left",
-        "image_width": "50",
-        "layout": "right",
-        "divider": false,
-        "top_padding": true,
-        "bottom_padding": true
-      }
-    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "image-1": {
+        "slide-1": {
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "Easy to wear, easy to return to",
+            "title": "El mejor plan empieza con un juego",
             "title_size": 64,
-            "subheading": "Soft shapes and understated details for everyday dressing and smaller occasions.",
-            "link": "",
-            "link_text": "Shop dresses",
+            "subheading": "Juguetes, juegos de mesa, rompecabezas y más. Para todas las edades.",
+            "link": "/collections",
+            "link_text": "Explorar catálogo",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "rgba(0,0,0,0)",
-            "text_align": "vertical-center horizontal-center",
+            "color_accent": "#DF2703",
+            "text_align": "vertical-center horizontal-left",
             "image": "",
+            "image_mobile": "",
             "parallax_direction": "top",
-            "overlay_opacity": 20
+            "overlay_opacity": 30
+          }
+        },
+        "slide-2": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "Colección destacada",
+            "title": "Juegos de Mesa para toda la familia",
+            "title_size": 54,
+            "subheading": "Noches que valen la pena. Para 2 hasta 8 jugadores.",
+            "link": "/collections/juegos-de-mesa",
+            "link_text": "Ver juegos de mesa",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "#DF2703",
+            "text_align": "vertical-center horizontal-left",
+            "image": "",
+            "image_mobile": "",
+            "parallax_direction": "top",
+            "overlay_opacity": 30
           }
         }
       },
-      "block_order": ["image-1"],
-      "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
+      "block_order": ["slide-1", "slide-2"],
       "settings": {
         "section_height": "650px",
-        "mobile_height": "auto",
+        "mobile_height": "400px",
         "parallax": true,
         "style": "bars",
         "autoplay": true,
         "autoplay_speed": 5
       }
     },
-    "image-grid": {
-      "type": "image-grid",
-      "blocks": {
-        "image-1": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "heading": "The Linen Edit"
-          }
-        },
-        "image-2": {
-          "type": "image",
-          "settings": {
-            "image": "",
-            "link": "",
-            "heading": "Soft Neutrals"
-          }
-        },
-        "image-3": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "heading": "Everyday Dresses"
-          }
-        },
-        "image-4": {
-          "type": "image",
-          "settings": {
-            "link": "",
-            "heading": "Thoughtful Layers"
-          }
-        },
-        "image-5": {
-          "type": "image",
-          "settings": {
-            "image": "",
-            "link": "",
-            "heading": "The Lookbook"
-          }
-        },
-        "image-6": {
-          "type": "image",
-          "settings": {
-            "image": "",
-            "link": "",
-            "heading": "Journal"
-          }
-        },
-        "image-7": {
-          "type": "image",
-          "settings": {
-            "image": "",
-            "link": "",
-            "heading": "Gift Guide"
-          }
-        }
-      },
-      "block_order": ["image-1", "image-2", "image-3", "image-4", "image-5", "image-6", "image-7"],
-      "name": "t:sections.image-grid.presets.image_grid.name",
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "text_alignment": "center",
-        "images_per_row": 4,
-        "image_shape": "landscape",
-        "grid_spacing": 30,
-        "full_width": false,
-        "space_above": false,
-        "space_below": false,
-        "divider": true,
-        "overlay_text_color": "#ffffff",
-        "overlay_color": "#000000",
-        "overlay_opacity": 30
-      }
-    },
-    "text-with-icons": {
+    "trust-badges": {
       "type": "text-with-icons",
       "blocks": {
-        "text-block-1": {
+        "badge-envio": {
           "type": "text_block",
           "settings": {
-            "icon": "sparkle",
-            "title": "Quietly considered",
-            "text": "<p>Understated details that bring polish without asking for attention.</p>"
+            "icon": "truck",
+            "title": "Envío Express",
+            "text": "<p>Recibe el mismo día en Bogotá.</p>"
           }
         },
-        "text-block-2": {
+        "badge-seguridad": {
           "type": "text_block",
           "settings": {
-            "icon": "cotton",
-            "title": "Texture you can feel",
-            "text": "<p>From airy linen to soft knits, each fabric adds warmth, ease, and depth.</p>"
+            "icon": "shield",
+            "title": "Compra 100% segura",
+            "text": "<p>Tus datos y pagos siempre protegidos.</p>"
           }
         },
-        "text-block-3": {
+        "badge-regalo": {
           "type": "text_block",
           "settings": {
-            "icon": "heart",
-            "title": "Made for repeat wear",
-            "text": "<p>Simple pieces, thoughtful layers, and a wardrobe that feels natural to come back to.</p>"
+            "icon": "ribbon",
+            "title": "Empaque para regalo",
+            "text": "<p>Presentación especial sin costo adicional.</p>"
+          }
+        },
+        "badge-catalogo": {
+          "type": "text_block",
+          "settings": {
+            "icon": "package",
+            "title": "+8.600 productos",
+            "text": "<p>El catálogo más completo de juguetería.</p>"
           }
         }
       },
-      "block_order": ["text-block-1", "text-block-2", "text-block-3"],
-      "name": "t:common.text_with_icons.presets.text_with_icons.name",
+      "block_order": ["badge-envio", "badge-seguridad", "badge-regalo", "badge-catalogo"],
       "settings": {
         "title": "",
         "heading_size": "h2",
-        "align_text": "left",
-        "desktop_columns_per_row": 3,
-        "icon_color": "#ffd5c1",
-        "button_label": "boop",
+        "align_text": "center",
+        "desktop_columns_per_row": 4,
+        "icon_color": "#1A1A1A",
         "button_link": "",
+        "divider": false
+      }
+    },
+    "colecciones-por-edad": {
+      "type": "featured-collections",
+      "blocks": {
+        "edad-0-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "0-a-1-anos",
+            "title": "0 a 1 años",
+            "focal_point": "center center"
+          }
+        },
+        "edad-1-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "1-a-3-anos",
+            "title": "1 a 3 años",
+            "focal_point": "center center"
+          }
+        },
+        "edad-3-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "3-a-5-anos",
+            "title": "3 a 5 años",
+            "focal_point": "center center"
+          }
+        },
+        "edad-5-7": {
+          "type": "collection",
+          "settings": {
+            "collection": "5-a-7-anos",
+            "title": "5 a 7 años",
+            "focal_point": "center center"
+          }
+        },
+        "edad-7-12": {
+          "type": "collection",
+          "settings": {
+            "collection": "7-a-12-anos",
+            "title": "7 a 12 años",
+            "focal_point": "center center"
+          }
+        },
+        "edad-12-99": {
+          "type": "collection",
+          "settings": {
+            "collection": "12-a-99-anos",
+            "title": "12 a 99 años",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": ["edad-0-1", "edad-1-3", "edad-3-5", "edad-5-7", "edad-7-12", "edad-12-99"],
+      "settings": {
+        "title": "Compra por edad",
+        "heading_size": "h2",
+        "divider": false,
+        "per_row": 3
+      }
+    },
+    "colecciones-por-categoria": {
+      "type": "featured-collections",
+      "blocks": {
+        "cat-juegos-mesa": {
+          "type": "collection",
+          "settings": {
+            "collection": "juegos-de-mesa",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-rompecabezas": {
+          "type": "collection",
+          "settings": {
+            "collection": "rompecabezas",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-arte": {
+          "type": "collection",
+          "settings": {
+            "collection": "arte-y-manualidades",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-construccion": {
+          "type": "collection",
+          "settings": {
+            "collection": "construccion",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-estimulacion": {
+          "type": "collection",
+          "settings": {
+            "collection": "estimulacion-temprana",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-roles": {
+          "type": "collection",
+          "settings": {
+            "collection": "roles",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-deportes": {
+          "type": "collection",
+          "settings": {
+            "collection": "deportes",
+            "title": "",
+            "focal_point": "center center"
+          }
+        },
+        "cat-libros": {
+          "type": "collection",
+          "settings": {
+            "collection": "libros",
+            "title": "",
+            "focal_point": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "cat-juegos-mesa",
+        "cat-rompecabezas",
+        "cat-arte",
+        "cat-construccion",
+        "cat-estimulacion",
+        "cat-roles",
+        "cat-deportes",
+        "cat-libros"
+      ],
+      "settings": {
+        "title": "Compra por categoría",
+        "heading_size": "h2",
+        "divider": false,
+        "per_row": 4
+      }
+    },
+    "los-mas-vendidos": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Los más vendidos",
+        "heading_size": "h2",
+        "home_featured_products": "los-mas-vendidos",
+        "per_row": 4,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
         "divider": true
+      }
+    },
+    "banner-editorial": {
+      "type": "background-image-text",
+      "settings": {
+        "subtitle": "",
+        "title": "Jugar es la cosa más seria que harás este fin de semana",
+        "heading_size": "h2",
+        "text": "<p>Más de 500 juegos de mesa para noches que valen la pena.</p>",
+        "button_label": "Ver juegos de mesa",
+        "button_link": "/collections/juegos-de-mesa",
+        "image": "",
+        "layout": "left",
+        "height": 600,
+        "framed": false,
+        "parallax": true,
+        "parallax_direction": "top"
+      }
+    },
+    "novedades": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Nuevos ingresos",
+        "heading_size": "h2",
+        "home_featured_products": "nuevos-ingresos",
+        "per_row": 4,
+        "rows": 2,
+        "mobile_scrollable": true,
+        "view_all": true,
+        "divider": true
+      }
+    },
+    "testimonios": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonio-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Excelente calidad y llegó súper rápido. Mi hijo quedó feliz con su juego de mesa. 100% recomendado.</p>",
+            "image": "",
+            "author": "María C. — Bogotá"
+          }
+        },
+        "testimonio-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>Llevamos años comprando acá. Siempre encuentro material didáctico de calidad y el empaque para regalo es espectacular.</p>",
+            "image": "",
+            "author": "Carlos M. — Medellín"
+          }
+        },
+        "testimonio-3": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "5-stars",
+            "testimonial": "<p>El rompecabezas que pedí llegó perfecto y en el mismo día. No compro juguetes en otro lado.</p>",
+            "image": "",
+            "author": "Paola R. — Bogotá"
+          }
+        }
+      },
+      "block_order": ["testimonio-1", "testimonio-2", "testimonio-3"],
+      "settings": {
+        "title": "Lo que dicen nuestros clientes",
+        "heading_size": "h2",
+        "align_text": "center",
+        "round_images": true,
+        "color_background": "#FAF3E3",
+        "color_text": "#1A1A1A"
       }
     }
   },
   "order": [
-    "shoppable-hero",
-    "featured-collections",
-    "featured-collection",
-    "promo-grid",
-    "featured-collection-2",
-    "hero-video",
-    "text-and-image",
     "slideshow",
-    "image-grid",
-    "text-with-icons"
+    "trust-badges",
+    "colecciones-por-edad",
+    "colecciones-por-categoria",
+    "los-mas-vendidos",
+    "banner-editorial",
+    "novedades",
+    "testimonios"
   ]
 }
