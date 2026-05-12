@@ -15,4 +15,8 @@
   --color-secondary: #0B4FD9;
 }
 
+/* === JYE CUSTOM: Tarjeta minimalista — ocultar badges de producto === */
+.grid-product__tag {
+  display: none;
+}
 /* === END JYE CUSTOM === */
