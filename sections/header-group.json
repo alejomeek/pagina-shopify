@@ -23,7 +23,9 @@
           }
         }
       },
-      "block_order": ["announcement-jye"],
+      "block_order": [
+        "announcement-jye"
+      ],
       "settings": {
         "announcement_compact": true,
         "sticky_on_scroll": true,
@@ -32,10 +34,8 @@
     },
     "header": {
       "type": "header",
-      "blocks": {},
-      "block_order": [],
       "settings": {
-        "logo": "",
+        "logo": "shopify://shop_images/logo_transparente.png",
         "desktop_logo_width": 220,
         "mobile_logo_width": 150,
         "main_menu_link_list": "main-menu",
@@ -52,5 +52,8 @@
       }
     }
   },
-  "order": ["announcement", "header"]
+  "order": [
+    "announcement",
+    "header"
+  ]
 }

@@ -48,7 +48,11 @@
           }
         }
       },
-      "block_order": ["promotion-1", "promotion-2", "promotion-3"],
+      "block_order": [
+        "promotion-1",
+        "promotion-2",
+        "promotion-3"
+      ],
       "disabled": true,
       "settings": {
         "hide_homepage": false
@@ -60,7 +64,7 @@
         "logo-social": {
           "type": "logo_social",
           "settings": {
-            "logo": "",
+            "logo": "shopify://shop_images/logo_transparente.png",
             "desktop_logo_height": 60,
             "container_width": 25
           }
@@ -90,7 +94,12 @@
           }
         }
       },
-      "block_order": ["logo-social", "menu-empresa", "menu-ayuda", "menu-politicas"],
+      "block_order": [
+        "logo-social",
+        "menu-empresa",
+        "menu-ayuda",
+        "menu-politicas"
+      ],
       "settings": {
         "show_currency_selector": false,
         "show_currency_flags": false,
@@ -101,5 +110,8 @@
       }
     }
   },
-  "order": ["footer-promotions", "footer"]
+  "order": [
+    "footer-promotions",
+    "footer"
+  ]
 }
