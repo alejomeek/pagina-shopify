@@ -286,7 +286,7 @@
     "novedades": {
       "type": "featured-collection",
       "settings": {
-        "title": "Nuevos ingresos",
+        "title": "Novedades",
         "heading_size": "h2",
         "home_featured_products": "nuevos-ingresos",
         "per_row": 4,
