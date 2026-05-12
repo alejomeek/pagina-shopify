@@ -1,0 +1,18 @@
+/* === JYE CUSTOM: Variables de paleta de marca ===
+ * Variables CSS adicionales que Impulse no expone nativamente.
+ * Los colores primario, fondo, texto y botones ya los gestiona Impulse
+ * vía settings_data.json. Aquí se definen los acentos restantes.
+ * =================================================== */
+
+:root {
+  /* Amarillo — badges, trust badges, destacados */
+  --color-accent-1: #F2D022;
+
+  /* Naranja — hover states, descuentos, precio rebajado */
+  --color-accent-2: #F29F05;
+
+  /* Azul — links, trust badges, información secundaria */
+  --color-secondary: #0B4FD9;
+}
+
+/* === END JYE CUSTOM === */

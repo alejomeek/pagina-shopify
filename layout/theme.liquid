@@ -55,6 +55,8 @@
     }
     /* === END JYE CUSTOM === */
   {%- endstyle -%}
+  {%- comment -%} JYE: Variables CSS adicionales de paleta de marca {%- endcomment -%}
+  {{ 'jye-custom.css' | asset_url | stylesheet_tag }}
 
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
