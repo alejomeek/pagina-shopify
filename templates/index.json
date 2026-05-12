@@ -277,7 +277,7 @@
         "button_link": "/collections/juegos-de-mesa",
         "image": "",
         "layout": "left",
-        "height": 600,
+        "height": 550,
         "framed": false,
         "parallax": true,
         "parallax_direction": "top"
