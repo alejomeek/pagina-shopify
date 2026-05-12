@@ -16,8 +16,8 @@
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "El mejor plan empieza con un juego",
-            "title_size": 64,
+            "title": "Juegos de Mesa",
+            "title_size": 54,
             "subheading": "Juguetes, juegos de mesa, rompecabezas y más. Para todas las edades.",
             "link": "/collections",
             "link_text": "Explorar catálogo",
@@ -34,10 +34,10 @@
         "slide-2": {
           "type": "image",
           "settings": {
-            "top_subheading": "Colección destacada",
-            "title": "Juegos de Mesa para toda la familia",
+            "top_subheading": "",
+            "title": "",
             "title_size": 54,
-            "subheading": "Noches que valen la pena. Para 2 hasta 8 jugadores.",
+            "subheading": "",
             "link": "/collections/juegos-de-mesa",
             "link_text": "Ver juegos de mesa",
             "link_2": "",
@@ -45,7 +45,7 @@
             "color_accent": "#df2703",
             "text_align": "vertical-center horizontal-left",
             "image": "shopify://shop_images/30c6c99c-15f3-47af-bbfd-4964ba7fa407.png",
-            "image_mobile": "shopify://shop_images/d01b3a00-b8e2-4573-944a-e460f7472c65.png",
+            "image_mobile": "shopify://shop_images/932ccf3b-c93e-4eff-bee8-7e37b39e59a3.png",
             "parallax_direction": "top",
             "overlay_opacity": 30
           }
