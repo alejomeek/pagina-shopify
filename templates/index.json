@@ -86,7 +86,7 @@
         "badge-regalo": {
           "type": "text_block",
           "settings": {
-            "icon": "ribbon",
+            "icon": "gift",
             "title": "Empaque para regalo",
             "text": "<p>Presentación especial sin costo adicional.</p>"
           }
@@ -320,7 +320,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Excelente calidad y llegó súper rápido. Mi hijo quedó feliz con su juego de mesa. 100% recomendado.</p>",
             "author": "María C. — Bogotá",
-            "author_info": "Los Angeles, CA"
+            "author_info": ""
           }
         },
         "testimonio-2": {
@@ -329,7 +329,7 @@
             "icon": "5-stars",
             "testimonial": "<p>Llevamos años comprando acá. Siempre encuentro material didáctico de calidad y el empaque para regalo es espectacular.</p>",
             "author": "Carlos M. — Medellín",
-            "author_info": "Los Angeles, CA"
+            "author_info": ""
           }
         },
         "testimonio-3": {
@@ -338,7 +338,7 @@
             "icon": "5-stars",
             "testimonial": "<p>El rompecabezas que pedí llegó perfecto y en el mismo día. No compro juguetes en otro lado.</p>",
             "author": "Paola R. — Bogotá",
-            "author_info": "Los Angeles, CA"
+            "author_info": ""
           }
         }
       },

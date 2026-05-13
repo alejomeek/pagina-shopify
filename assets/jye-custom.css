@@ -14,6 +14,7 @@
   /* Azul — links, trust badges, información secundaria */
   --color-secondary: #0B4FD9;
 }
+/* === END JYE CUSTOM === */
 
 /* === JYE CUSTOM: Tarjeta minimalista — ocultar badges de producto === */
 .grid-product__tag {
@@ -23,7 +24,7 @@
 
 /* === JYE CUSTOM: Trust badges — scroll horizontal en mobile === */
 @media only screen and (max-width: 768px) {
-  #shopify-section-trust-badges .text-with-icons__blocks {
+  [id$="__trust-badges"] .text-with-icons__blocks {
     flex-direction: row;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -32,28 +33,12 @@
     gap: 0;
     padding-bottom: 8px;
   }
-  #shopify-section-trust-badges .text-with-icons__block {
+  [id$="__trust-badges"] .text-with-icons__block {
     min-width: 200px;
     flex: 0 0 auto;
     width: auto;
     padding: 16px 20px;
     scroll-snap-align: start;
-  }
-}
-/* === END JYE CUSTOM === */
-
-/* === JYE CUSTOM: Hero slider — texto legible en 375px === */
-@media only screen and (max-width: 375px) {
-  .hero__title {
-    font-size: 28px !important;
-  }
-  .hero__subtitle {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  .hero__link .btn {
-    font-size: 13px;
-    padding: 10px 20px;
   }
 }
 /* === END JYE CUSTOM === */
@@ -96,6 +81,37 @@
     flex-direction: column;
     gap: 20px;
     padding: 16px;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Botón flotante de WhatsApp === */
+.jye-whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+.jye-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+@media only screen and (max-width: 768px) {
+  .jye-whatsapp-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
   }
 }
 /* === END JYE CUSTOM === */
