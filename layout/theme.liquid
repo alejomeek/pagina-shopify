@@ -48,9 +48,9 @@
     #shopify-section-trust-badges {
       background-color: #F2D022;
     }
-    #shopify-section-trust-badges .text-with-icons__icon,
-    #shopify-section-trust-badges .text-with-icons__title,
-    #shopify-section-trust-badges .text-with-icons__text {
+    #shopify-section-trust-badges .text-with-icons__block-icon,
+    #shopify-section-trust-badges .text-with-icons__block-title,
+    #shopify-section-trust-badges .text-with-icons__block-text {
       color: #1A1A1A;
     }
     /* === END JYE CUSTOM === */
@@ -402,5 +402,7 @@
       </image-element>
     </div>
   </template>
+{%- comment -%} JYE: Script custom — sugerencias de búsqueda vacía {%- endcomment -%}
+{{ 'jye-custom.js' | asset_url | script_tag }}
 </body>
 </html>

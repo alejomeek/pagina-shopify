@@ -20,3 +20,82 @@
   display: none;
 }
 /* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Trust badges — scroll horizontal en mobile === */
+@media only screen and (max-width: 768px) {
+  #shopify-section-trust-badges .text-with-icons__blocks {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    padding-bottom: 8px;
+  }
+  #shopify-section-trust-badges .text-with-icons__block {
+    min-width: 200px;
+    flex: 0 0 auto;
+    width: auto;
+    padding: 16px 20px;
+    scroll-snap-align: start;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Hero slider — texto legible en 375px === */
+@media only screen and (max-width: 375px) {
+  .hero__title {
+    font-size: 28px !important;
+  }
+  .hero__subtitle {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  .hero__link .btn {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Panel de sugerencias de búsqueda vacía === */
+.jye-search-suggestions {
+  display: flex;
+  gap: 32px;
+  padding: 24px;
+}
+.jye-search-suggestions__group {
+  flex: 1;
+}
+.jye-search-suggestions__title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--colorTextBody);
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+.jye-search-suggestions__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.jye-search-suggestions__list li {
+  margin-bottom: 8px;
+}
+.jye-search-suggestions__list a {
+  color: var(--colorTextBody);
+  text-decoration: none;
+  font-size: 15px;
+}
+.jye-search-suggestions__list a:hover {
+  color: var(--colorBtnPrimary);
+}
+@media only screen and (max-width: 768px) {
+  .jye-search-suggestions {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+  }
+}
+/* === END JYE CUSTOM === */
