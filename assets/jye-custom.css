@@ -85,6 +85,23 @@
 }
 /* === END JYE CUSTOM === */
 
+/* === JYE CUSTOM: Imágenes de producto — object-fit contain con fondo blanco === */
+.grid-product__image-mask .grid__image-ratio {
+  background-color: #FFFFFF;
+}
+.grid-product__image-mask .grid__image-ratio img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.grid-product__secondary-image {
+  background-color: #FFFFFF;
+}
+.grid-product__secondary-image img {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+/* === END JYE CUSTOM === */
+
 /* === JYE CUSTOM: Botón flotante de WhatsApp === */
 .jye-whatsapp-btn {
   position: fixed;

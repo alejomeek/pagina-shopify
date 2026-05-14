@@ -8,10 +8,6 @@
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
   <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
-  {%- comment -%} JYE: Preconexión y carga de Readex Pro desde Google Fonts {%- endcomment -%}
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;700&display=swap" rel="stylesheet">
   <link rel="dns-prefetch" href="https://productreviews.shopifycdn.com">
   <link rel="dns-prefetch" href="https://ajax.googleapis.com">
   <link rel="dns-prefetch" href="https://maps.googleapis.com">
@@ -34,16 +30,7 @@
   {%- render 'font-face' -%}
   {{ 'theme.css' | asset_url | stylesheet_tag: preload: true }}
   {%- render 'css-variables' -%}
-  {%- comment -%} JYE: Override fuente encabezados → Readex Pro (no disponible en librería nativa Shopify) {%- endcomment -%}
   {%- style -%}
-    /* === JYE CUSTOM: Readex Pro como fuente de encabezados === */
-    :root {
-      --typeHeaderPrimary: 'Readex Pro', sans-serif;
-      --typeHeaderFallback: sans-serif;
-      --typeHeaderWeight: 700;
-    }
-    /* === END JYE CUSTOM === */
-
     /* === JYE CUSTOM: Trust badges — fondo amarillo === */
     [id$="__trust-badges"] {
       background-color: #F2D022;
