@@ -12,6 +12,44 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "image_p7Tq8V": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "New Arrivals",
+            "title_size": 80,
+            "subheading": "Fresh additions crafted with quality and attention to detail.",
+            "link": "",
+            "link_text": "Explore",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify://shop_images/pinzas-sensoriales-motricidad-fina-heroe.png",
+            "image_mobile": "shopify://shop_images/pinzas-sensoriales-motricidad-fina-heroe-mobile.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 20
+          }
+        },
+        "image_bmx8ag": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "New Arrivals",
+            "title_size": 80,
+            "subheading": "Fresh additions crafted with quality and attention to detail.",
+            "link": "",
+            "link_text": "Explore",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify://shop_images/rompecabezas-clementoni-banner-horizontal.png",
+            "image_mobile": "shopify://shop_images/rompecabezas-clementoni-mobile-banner.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 20
+          }
+        },
         "slide-1": {
           "type": "image",
           "settings": {
@@ -25,8 +63,8 @@
             "link_text_2": "",
             "color_accent": "#df2703",
             "text_align": "vertical-center horizontal-left",
-            "image": "shopify://shop_images/a2516722-9ccd-4e56-b6fc-568d6174ff15.png",
-            "image_mobile": "shopify://shop_images/bc742d12-2cb0-4093-a678-3694db7aad67.png",
+            "image": "shopify://shop_images/catan-juego-de-mesa-banner.png",
+            "image_mobile": "shopify://shop_images/catan-juego-de-mesa-banner_mobile_d324f20e-f406-4470-bc78-1ecb5f264bc8.png",
             "parallax_direction": "top",
             "overlay_opacity": 30
           }
@@ -44,14 +82,16 @@
             "link_text_2": "",
             "color_accent": "#df2703",
             "text_align": "vertical-center horizontal-left",
-            "image": "shopify://shop_images/30c6c99c-15f3-47af-bbfd-4964ba7fa407.png",
-            "image_mobile": "shopify://shop_images/932ccf3b-c93e-4eff-bee8-7e37b39e59a3.png",
+            "image": "shopify://shop_images/exploding-kittens-heroe.png",
+            "image_mobile": "shopify://shop_images/exploding-kittens-heroe-mobile.png",
             "parallax_direction": "top",
             "overlay_opacity": 30
           }
         }
       },
       "block_order": [
+        "image_p7Tq8V",
+        "image_bmx8ag",
         "slide-1",
         "slide-2"
       ],
@@ -227,18 +267,18 @@
             "focal_point": "center center"
           }
         },
-        "cat-roles": {
+        "cat-vehiculos": {
           "type": "collection",
           "settings": {
-            "collection": "roles",
+            "collection": "vehiculos-coleccionables",
             "title": "",
             "focal_point": "center center"
           }
         },
-        "cat-deportes": {
+        "cat-experimentos": {
           "type": "collection",
           "settings": {
-            "collection": "deportes",
+            "collection": "experimentos",
             "title": "",
             "focal_point": "center center"
           }
@@ -258,8 +298,8 @@
         "cat-arte",
         "cat-construccion",
         "cat-estimulacion",
-        "cat-roles",
-        "cat-deportes",
+        "cat-vehiculos",
+        "cat-experimentos",
         "cat-libros"
       ],
       "settings": {

@@ -67,7 +67,7 @@
     "swatch_style": "round",
     "collection_grid_style": "below",
     "collection_grid_size": "portrait",
-    "collection_grid_image": "product",
+    "collection_grid_image": "collection",
     "collection_grid_text_align": "bottom-left",
     "collection_grid_tint": "#000000",
     "collection_grid_opacity": 20,
