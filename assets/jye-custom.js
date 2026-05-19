@@ -63,12 +63,14 @@
 /* === JYE CUSTOM: Trust badges — reset scroll al inicio en cada carga === */
 (function () {
   function resetTrustBadgesScroll() {
-    requestAnimationFrame(function () {
-      var container = document.querySelector('[id$="__trust-badges"] .text-with-icons__blocks');
-      if (container) container.scrollLeft = 0;
-    });
+    var container = document.querySelector('[id$="__trust-badges"] .text-with-icons__blocks');
+    if (container) container.scrollLeft = 0;
   }
-  /* window.load garantiza que el JS del tema ya inicializó sus secciones */
-  window.addEventListener('load', resetTrustBadgesScroll);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', resetTrustBadgesScroll);
+  } else {
+    resetTrustBadgesScroll();
+  }
 })();
 /* === END JYE CUSTOM === */
