@@ -132,3 +132,122 @@
   }
 }
 /* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Compra por edad — imagen cuadrada + texto overlay abajo a la izquierda === */
+
+/* Aspecto cuadrado — overrides el global portrait/full */
+[id$="__colecciones-por-edad"] .collection-image {
+  padding-bottom: 100% !important;
+  padding-top: 0 !important;
+}
+
+/* La imagen llena el cuadrado */
+[id$="__colecciones-por-edad"] .collection-image img {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+
+/* Gradiente oscuro abajo para que el texto sea legible.
+   z-index: 1 → encima de la imagen, debajo del título. */
+[id$="__colecciones-por-edad"] .collection-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Título como overlay abajo a la izquierda — z-index: 2 sobre el gradiente */
+[id$="__colecciones-por-edad"] .collection-item__title {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  right: 14px !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  z-index: 2;
+  text-align: left !important;
+}
+
+[id$="__colecciones-por-edad"] .collection-item__title span {
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+@media only screen and (min-width: 769px) {
+  [id$="__colecciones-por-edad"] .collection-item__title {
+    bottom: 18px !important;
+    left: 16px !important;
+  }
+  [id$="__colecciones-por-edad"] .collection-item__title span {
+    font-size: 1.2rem !important;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Compra por categoría — mismo estilo overlay que por edad === */
+
+[id$="__colecciones-por-categoria"] .collection-image {
+  padding-bottom: 100% !important;
+  padding-top: 0 !important;
+}
+
+[id$="__colecciones-por-categoria"] .collection-image img {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+
+[id$="__colecciones-por-categoria"] .collection-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+[id$="__colecciones-por-categoria"] .collection-item__title {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  right: 14px !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  z-index: 2;
+  text-align: left !important;
+}
+
+[id$="__colecciones-por-categoria"] .collection-item__title span {
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+@media only screen and (min-width: 769px) {
+  [id$="__colecciones-por-categoria"] .collection-item__title {
+    bottom: 18px !important;
+    left: 16px !important;
+  }
+  [id$="__colecciones-por-categoria"] .collection-item__title span {
+    font-size: 1.2rem !important;
+  }
+}
+/* === END JYE CUSTOM === */
