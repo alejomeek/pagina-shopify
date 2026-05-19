@@ -95,9 +95,16 @@
 
     /* Sincronizar dot activo con el scroll */
     container.addEventListener('scroll', function () {
-      var badgeWidth = badges[0].offsetWidth || 1;
-      var activeIndex = Math.round(container.scrollLeft / badgeWidth);
-      activeIndex = Math.max(0, Math.min(activeIndex, badges.length - 1));
+      var scrollLeft = container.scrollLeft;
+      var activeIndex = 0;
+      var minDist = Infinity;
+      badges.forEach(function (badge, i) {
+        var dist = Math.abs(badge.offsetLeft - scrollLeft);
+        if (dist < minDist) {
+          minDist = dist;
+          activeIndex = i;
+        }
+      });
       Array.prototype.forEach.call(
         dotsEl.querySelectorAll('.jye-trust-dot'),
         function (dot, i) {
