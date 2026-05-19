@@ -41,12 +41,11 @@
     padding-bottom: 8px;
   }
   [id$="__trust-badges"] .text-with-icons__block {
-    flex: 0 0 75vw;
-    width: 75vw;
-    max-width: 300px;
+    min-width: 200px;
+    flex: 0 0 auto;
+    width: auto;
     padding: 16px 20px;
     scroll-snap-align: start;
-    box-sizing: border-box;
   }
   /* Degradado derecho — señal visual de que hay más contenido al deslizar */
   [id$="__trust-badges"]::after {
