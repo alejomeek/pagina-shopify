@@ -59,3 +59,18 @@
   }
 })();
 /* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Trust badges — reset scroll al inicio en cada carga === */
+(function () {
+  function resetTrustBadgesScroll() {
+    var container = document.querySelector('[id$="__trust-badges"] .text-with-icons__blocks');
+    if (container) container.scrollLeft = 0;
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', resetTrustBadgesScroll);
+  } else {
+    resetTrustBadgesScroll();
+  }
+})();
+/* === END JYE CUSTOM === */

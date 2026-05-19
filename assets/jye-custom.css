@@ -24,6 +24,9 @@
 
 /* === JYE CUSTOM: Trust badges — scroll horizontal en mobile === */
 @media only screen and (max-width: 768px) {
+  [id$="__trust-badges"] {
+    position: relative;
+  }
   [id$="__trust-badges"] .text-with-icons__blocks {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -34,11 +37,24 @@
     padding-bottom: 8px;
   }
   [id$="__trust-badges"] .text-with-icons__block {
-    min-width: 200px;
-    flex: 0 0 auto;
-    width: auto;
+    flex: 0 0 75vw;
+    width: 75vw;
+    max-width: 300px;
     padding: 16px 20px;
     scroll-snap-align: start;
+    box-sizing: border-box;
+  }
+  /* Degradado derecho — señal visual de que hay más contenido al deslizar */
+  [id$="__trust-badges"]::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 48px;
+    background: linear-gradient(to right, transparent, #FEFDF6);
+    pointer-events: none;
+    z-index: 1;
   }
 }
 /* === END JYE CUSTOM === */
