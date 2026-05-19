@@ -60,17 +60,57 @@
 })();
 /* === END JYE CUSTOM === */
 
-/* === JYE CUSTOM: Trust badges — reset scroll al inicio en cada carga === */
+/* === JYE CUSTOM: Trust badges — dots indicator + reset scroll al inicio === */
 (function () {
-  function resetTrustBadgesScroll() {
-    var container = document.querySelector('[id$="__trust-badges"] .text-with-icons__blocks');
-    if (container) container.scrollLeft = 0;
+  function initTrustBadges() {
+    var section = document.querySelector('[id$="__trust-badges"]');
+    if (!section) return;
+
+    var container = section.querySelector('.text-with-icons__blocks');
+    if (!container) return;
+
+    var badges = Array.prototype.slice.call(
+      container.querySelectorAll('.text-with-icons__block')
+    );
+    if (badges.length <= 1) return;
+
+    /* Reset al primer badge */
+    container.scrollLeft = 0;
+
+    /* Crear dots */
+    var dotsEl = document.createElement('div');
+    dotsEl.className = 'jye-trust-dots';
+
+    badges.forEach(function (_, i) {
+      var dot = document.createElement('button');
+      dot.className = 'jye-trust-dot' + (i === 0 ? ' jye-trust-dot--active' : '');
+      dot.setAttribute('aria-label', 'Ver badge ' + (i + 1));
+      dot.addEventListener('click', function () {
+        container.scrollTo({ left: badges[i].offsetLeft, behavior: 'smooth' });
+      });
+      dotsEl.appendChild(dot);
+    });
+
+    container.parentNode.insertBefore(dotsEl, container.nextSibling);
+
+    /* Sincronizar dot activo con el scroll */
+    container.addEventListener('scroll', function () {
+      var badgeWidth = badges[0].offsetWidth || 1;
+      var activeIndex = Math.round(container.scrollLeft / badgeWidth);
+      activeIndex = Math.max(0, Math.min(activeIndex, badges.length - 1));
+      Array.prototype.forEach.call(
+        dotsEl.querySelectorAll('.jye-trust-dot'),
+        function (dot, i) {
+          dot.classList.toggle('jye-trust-dot--active', i === activeIndex);
+        }
+      );
+    }, { passive: true });
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', resetTrustBadgesScroll);
+    document.addEventListener('DOMContentLoaded', initTrustBadges);
   } else {
-    resetTrustBadgesScroll();
+    initTrustBadges();
   }
 })();
 /* === END JYE CUSTOM === */

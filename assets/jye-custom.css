@@ -23,6 +23,10 @@
 /* === END JYE CUSTOM === */
 
 /* === JYE CUSTOM: Trust badges — scroll horizontal en mobile === */
+
+/* Dots: ocultos por defecto, visibles solo en mobile via media query */
+.jye-trust-dots { display: none; }
+
 @media only screen and (max-width: 768px) {
   [id$="__trust-badges"] {
     position: relative;
@@ -55,6 +59,29 @@
     background: linear-gradient(to right, transparent, #FEFDF6);
     pointer-events: none;
     z-index: 1;
+  }
+  /* Dots indicator */
+  .jye-trust-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0 4px;
+  }
+  .jye-trust-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(26, 26, 26, 0.2);
+    padding: 0;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .jye-trust-dot--active {
+    background-color: #1A1A1A;
+    transform: scale(1.3);
   }
 }
 /* === END JYE CUSTOM === */
