@@ -60,6 +60,71 @@
 })();
 /* === END JYE CUSTOM === */
 
+/* === JYE CUSTOM: Barra visible estilo Retrospec — abre predictive search real === */
+(function () {
+  function openHeaderSearch(fakeInput) {
+    var container = document.querySelector('.site-header__search-container');
+    var predictive = container && container.querySelector('predictive-search[data-context="header"]');
+    var realInput = predictive && predictive.querySelector('input[type="search"]');
+
+    if (!container || !predictive || !realInput) return;
+
+    container.classList.add('is-active');
+    predictive.classList.add('is-active');
+
+    if (fakeInput && fakeInput.value !== realInput.value) {
+      realInput.value = fakeInput.value;
+    }
+
+    document.dispatchEvent(new CustomEvent('predictive-search:open', {
+      detail: { context: 'header' },
+      bubbles: true
+    }));
+
+    realInput.focus({ preventScroll: true });
+  }
+
+  function initFakeHeaderSearch() {
+    document.querySelectorAll('[data-jye-fake-search]').forEach(function (input) {
+      var form = input.closest('form');
+      var submitButton = form && form.querySelector('.jye-inline-search__submit');
+
+      input.addEventListener('pointerdown', function (event) {
+        event.preventDefault();
+        openHeaderSearch(input);
+      });
+
+      input.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') return;
+        openHeaderSearch(input);
+      });
+
+      if (submitButton) {
+        submitButton.addEventListener('pointerdown', function (event) {
+          if (input.value.trim().length) return;
+          event.preventDefault();
+          openHeaderSearch(input);
+        });
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (event) {
+          if (input.value.trim().length) return;
+          event.preventDefault();
+          openHeaderSearch(input);
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFakeHeaderSearch);
+  } else {
+    initFakeHeaderSearch();
+  }
+})();
+/* === END JYE CUSTOM === */
+
 /* === JYE CUSTOM: Trust badges — dots indicator + reset scroll al inicio === */
 (function () {
   function initTrustBadges() {

@@ -144,6 +144,69 @@
 }
 /* === END JYE CUSTOM === */
 
+/* === JYE CUSTOM: Barra visible estilo Retrospec que abre predictive search === */
+.jye-inline-search {
+  background: var(--colorNav);
+  padding: 8px 0 10px;
+}
+
+.jye-inline-search__form {
+  align-items: center;
+  background: var(--colorNavSearch, #fff);
+  border: 1px solid rgba(26, 26, 26, 0.2);
+  border-radius: calc(var(--roundness, 0) * 2);
+  display: flex;
+  margin: 0 auto;
+  max-width: 760px;
+  min-height: 48px;
+  padding: 0 14px;
+}
+
+.jye-inline-search__submit {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: center;
+  padding: 0 10px 0 0;
+}
+
+.jye-inline-search__submit .icon {
+  height: 24px;
+  width: 24px;
+}
+
+.jye-inline-search__submit .icon path {
+  fill: none;
+  stroke: currentColor;
+}
+
+.jye-inline-search__input {
+  background: transparent;
+  border: 0;
+  color: var(--colorTextBody);
+  flex: 1 1 auto;
+  font-size: 16px;
+  min-width: 0;
+  padding: 0;
+}
+
+.jye-inline-search__input:focus {
+  border: 0;
+  outline: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .jye-inline-search {
+    padding: 6px 16px 10px;
+  }
+
+  .jye-inline-search__form {
+    max-width: none;
+    min-height: 46px;
+  }
+}
+/* === END JYE CUSTOM === */
+
 /* === JYE CUSTOM: Botón flotante de WhatsApp === */
 .jye-whatsapp-btn {
   position: fixed;

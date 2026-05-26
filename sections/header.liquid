@@ -25,6 +25,9 @@
   if template_name contains 'collection' and collection.image and section.settings.sticky_collection
     assign overlay_header = true
   endif
+  if settings.search_enable
+    assign overlay_header = false
+  endif
 -%}
 
 {%- render 'drawer-menu',
@@ -124,6 +127,7 @@
 
             {%- if logo_alignment == 'center' -%}
               <div class="header-item header-item--left header-item--navigation">
+                {%- comment -%} JYE: desactivado — ícono de lupa center/center-split reemplazado por barra inline #HeaderInlineSearch
                 {%- if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' -%}
                   {%- if settings.search_enable -%}
                     <div class="site-nav small--hide">
@@ -134,6 +138,7 @@
                     </div>
                   {%- endif -%}
                 {%- endif -%}
+                {%- endcomment -%}
 
                 {%- if section.settings.main_menu_alignment == 'center-left' -%}
                   {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment, hover_menu: section.settings.hover_menu -%}
@@ -169,6 +174,33 @@
           {%- if section.settings.main_menu_alignment == 'center' -%}
             <div class="text-center">
               {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment, hover_menu: section.settings.hover_menu -%}
+            </div>
+          {%- endif -%}
+
+          {%- comment -%} JYE: Barra visible estilo Retrospec — abre el predictive search original {%- endcomment -%}
+          {%- if settings.search_enable -%}
+            <div id="HeaderInlineSearch" class="jye-inline-search" data-jye-fake-search-wrap>
+              <form action="{{ routes.search_url }}" method="get" role="search" class="jye-inline-search__form">
+                <input name="type" type="hidden" value="{{ settings.search_type | default: 'product' }}">
+                <label for="HeaderInlineSearchInput" class="hidden-label">{{ 'general.search.title' | t }}</label>
+                <button class="jye-inline-search__submit" type="submit" aria-label="{{ 'general.search.submit' | t }}">
+                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
+                </button>
+                <input
+                  id="HeaderInlineSearchInput"
+                  class="jye-inline-search__input"
+                  data-jye-fake-search
+                  type="search"
+                  name="q"
+                  value="{{ search.terms | escape }}"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  enterkeyhint="search"
+                  placeholder="{{ 'general.search.placeholder' | t }}"
+                  aria-label="{{ 'general.search.title' | t }}">
+              </form>
             </div>
           {%- endif -%}
         </div>

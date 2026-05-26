@@ -6,12 +6,14 @@
       </span>
     {%- endif -%}
 
+    {%- comment -%} JYE: desactivado — ícono de lupa reemplazado por barra inline en #HeaderInlineSearch
     {%- if settings.search_enable -%}
       <a href="{{ routes.search_url }}" class="site-nav__link site-nav__link--icon js-search-header{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><title>icon-search</title><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
         <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
       </a>
     {%- endif -%}
+    {%- endcomment -%}
 
     {%- if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' or section.settings.main_menu_alignment == 'left-drawer' -%}
       <button
