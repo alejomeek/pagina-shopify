@@ -29,7 +29,7 @@
       "settings": {
         "announcement_compact": true,
         "sticky_on_scroll": true,
-        "sticky_on_mobile": false
+        "sticky_on_mobile": true
       }
     },
     "header": {

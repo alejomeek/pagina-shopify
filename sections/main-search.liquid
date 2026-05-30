@@ -2,15 +2,21 @@
   <div class="page-width page-content">
     {%- render 'breadcrumbs' -%}
 
-    <header class="section-header">
+    <header class="section-header jye-search-page-title">
       <h1 class="section-header__title">
         {{ 'general.search.title' | t }}
       </h1>
     </header>
 
-    {%- render 'predictive-search', context: 'search-page' -%}
+    <div class="jye-search-page-form">
+      {%- render 'predictive-search', context: 'search-page' -%}
+    </div>
 
     {%- if search.performed -%}
+      <p class="jye-search-page-summary">
+        {{ search.results_count }} resultados para "{{ search.terms | replace: '*', '' }}"
+      </p>
+
       <hr class="hr--medium">
 
       <div class="section-header">
@@ -153,5 +159,4 @@
   ]
 }
 {% endschema %}
-
 

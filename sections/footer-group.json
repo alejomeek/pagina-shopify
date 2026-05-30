@@ -65,7 +65,7 @@
           "type": "logo_social",
           "settings": {
             "logo": "shopify://shop_images/logo_transparente.png",
-            "desktop_logo_height": 60,
+            "desktop_logo_height": 34,
             "container_width": 25
           }
         },

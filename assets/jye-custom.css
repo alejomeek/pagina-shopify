@@ -13,6 +13,9 @@
 
   /* Azul — links, trust badges, información secundaria */
   --color-secondary: #0B4FD9;
+
+  /* Gris medio — texto secundario, íconos sutiles */
+  --color-text-light: #4A4A4A;
 }
 /* === END JYE CUSTOM === */
 
@@ -145,6 +148,10 @@
 /* === END JYE CUSTOM === */
 
 /* === JYE CUSTOM: Barra visible estilo Retrospec que abre predictive search === */
+.jye-mobile-commerce-header {
+  display: none;
+}
+
 .jye-inline-search {
   background: var(--colorNav);
   padding: 8px 0 10px;
@@ -196,13 +203,111 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .jye-inline-search {
-    padding: 6px 16px 10px;
+  .jye-has-mobile-commerce-header .header-layout,
+  .jye-has-mobile-commerce-header > .page-width > .jye-inline-search {
+    display: none;
   }
 
-  .jye-inline-search__form {
+  .jye-mobile-commerce-header {
+    align-items: center;
+    background: var(--colorNav);
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 54px minmax(0, 1fr) 42px 42px;
+    min-height: 78px;
+    padding: 10px 0;
+  }
+
+  .jye-mobile-commerce-header__logo {
+    align-items: center;
+    display: flex;
+    height: 54px;
+    justify-content: center;
+    overflow: hidden;
+    width: 54px;
+  }
+
+  .jye-mobile-commerce-header__logo img {
+    display: block;
+    height: 54px;
+    object-fit: contain;
+    width: 54px;
+  }
+
+  .jye-mobile-commerce-header__search {
+    margin: 0;
     max-width: none;
-    min-height: 46px;
+    min-height: 48px;
+    padding: 0 12px;
+  }
+
+  .jye-mobile-commerce-header__search .jye-inline-search__submit {
+    padding-right: 9px;
+  }
+
+  .jye-mobile-commerce-header__search .jye-inline-search__submit .icon {
+    height: 22px;
+    width: 22px;
+  }
+
+  .jye-mobile-commerce-header__icon {
+    align-items: center;
+    color: var(--colorNavText);
+    display: flex;
+    height: 42px;
+    justify-content: center;
+    padding: 0;
+    position: relative;
+    width: 42px;
+  }
+
+  .jye-mobile-commerce-header__icon .icon {
+    height: 28px;
+    width: 28px;
+  }
+
+  .jye-mobile-commerce-header__icon .cart-link {
+    display: flex;
+  }
+
+  .jye-mobile-commerce-header__icon .cart-link__bubble {
+    right: 1px;
+    top: 3px;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Resultados de búsqueda mobile — evitar formulario duplicado === */
+.jye-search-page-summary {
+  color: var(--colorTextBody);
+  display: block;
+  font-size: 16px;
+  line-height: 1.35;
+  margin: 0 0 20px;
+}
+
+.search-content .breadcrumbs,
+.jye-search-page-title,
+.jye-search-page-form {
+  display: none;
+}
+
+.search-content .hr--medium {
+  margin: 0 0 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .search-content .page-content {
+    padding-top: 20px;
+  }
+
+  .jye-search-page-summary {
+    font-size: 18px;
+    margin: 0 0 16px;
+  }
+
+  .search-content .hr--medium {
+    margin: 0 0 20px;
   }
 }
 /* === END JYE CUSTOM === */
@@ -295,6 +400,67 @@
     left: 16px !important;
   }
   [id$="__colecciones-por-edad"] .collection-item__title span {
+    font-size: 1.2rem !important;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Subcollections en páginas /collections/* — mismo overlay que homepage === */
+
+/* Aspecto cuadrado */
+[id$="__main-collection"] .collection-image {
+  padding-bottom: 100% !important;
+  padding-top: 0 !important;
+}
+
+/* La imagen llena el cuadrado */
+[id$="__main-collection"] .collection-image img {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+
+/* Gradiente oscuro abajo — z-index 1, encima de imagen, debajo del título */
+[id$="__main-collection"] .collection-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Título overlay abajo a la izquierda — z-index 2, sobre el gradiente */
+[id$="__main-collection"] .collection-item__title {
+  position: absolute !important;
+  bottom: 14px !important;
+  left: 14px !important;
+  right: 14px !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 !important;
+  z-index: 2;
+  text-align: left !important;
+}
+
+[id$="__main-collection"] .collection-item__title span {
+  color: #ffffff !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  text-shadow: none !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+@media only screen and (min-width: 769px) {
+  [id$="__main-collection"] .collection-item__title {
+    bottom: 18px !important;
+    left: 16px !important;
+  }
+  [id$="__main-collection"] .collection-item__title span {
     font-size: 1.2rem !important;
   }
 }
