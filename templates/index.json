@@ -16,11 +16,11 @@
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "New Arrivals",
+            "title": "Juguetes didácticos por edad",
             "title_size": 80,
-            "subheading": "Fresh additions crafted with quality and attention to detail.",
-            "link": "",
-            "link_text": "Explore",
+            "subheading": "Encuentra opciones para bebés, niños pequeños y grandes.",
+            "link": "/collections/1-a-3-anos",
+            "link_text": "Comprar por edad",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
@@ -35,11 +35,11 @@
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "New Arrivals",
+            "title": "Rompecabezas para todas las edades",
             "title_size": 80,
-            "subheading": "Fresh additions crafted with quality and attention to detail.",
-            "link": "",
-            "link_text": "Explore",
+            "subheading": "Diseños, personajes y formatos para todos los gustos.",
+            "link": "/collections/rompecabezas",
+            "link_text": "Ver rompecabezas",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
@@ -56,12 +56,12 @@
             "top_subheading": "",
             "title": "Juegos de Mesa",
             "title_size": 54,
-            "subheading": "Juguetes, juegos de mesa, rompecabezas y más. Para todas las edades.",
-            "link": "/collections",
-            "link_text": "Explorar catálogo",
+            "subheading": "Planes para familia, amigos y tardes memorables.",
+            "link": "/collections/juegos-de-mesa",
+            "link_text": "Ver juegos de mesa",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#df2703",
+            "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-left",
             "image": "shopify://shop_images/catan-juego-de-mesa-banner.png",
             "image_mobile": "shopify://shop_images/catan-juego-de-mesa-banner_mobile_d324f20e-f406-4470-bc78-1ecb5f264bc8.png",
@@ -73,14 +73,14 @@
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "",
+            "title": "Juegos rápidos y divertidos",
             "title_size": 54,
-            "subheading": "",
+            "subheading": "Risas, estrategia y partidas que se repiten.",
             "link": "/collections/juegos-de-mesa",
-            "link_text": "Ver juegos de mesa",
+            "link_text": "Ver juegos familiares",
             "link_2": "",
             "link_text_2": "",
-            "color_accent": "#df2703",
+            "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-left",
             "image": "shopify://shop_images/exploding-kittens-heroe.png",
             "image_mobile": "shopify://shop_images/exploding-kittens-heroe-mobile.png",
@@ -102,59 +102,6 @@
         "style": "bars",
         "autoplay": true,
         "autoplay_speed": 5
-      }
-    },
-    "trust-badges": {
-      "type": "text-with-icons",
-      "blocks": {
-        "badge-envio": {
-          "type": "text_block",
-          "settings": {
-            "icon": "truck",
-            "title": "Envío Express",
-            "text": "<p>Recibe el mismo día en Bogotá.</p>"
-          }
-        },
-        "badge-seguridad": {
-          "type": "text_block",
-          "settings": {
-            "icon": "shield",
-            "title": "Compra 100% segura",
-            "text": "<p>Tus datos y pagos siempre protegidos.</p>"
-          }
-        },
-        "badge-regalo": {
-          "type": "text_block",
-          "settings": {
-            "icon": "gift",
-            "title": "Empaque para regalo",
-            "text": "<p>Presentación especial sin costo adicional.</p>"
-          }
-        },
-        "badge-catalogo": {
-          "type": "text_block",
-          "settings": {
-            "icon": "package",
-            "title": "+8.600 productos",
-            "text": "<p>El catálogo más completo de juguetería.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "badge-envio",
-        "badge-seguridad",
-        "badge-regalo",
-        "badge-catalogo"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h2",
-        "align_text": "center",
-        "desktop_columns_per_row": 4,
-        "icon_color": "#1a1a1a",
-        "button_label": "",
-        "button_link": "",
-        "divider": false
       }
     },
     "colecciones-por-edad": {
@@ -222,6 +169,59 @@
         "heading_size": "h2",
         "divider": false,
         "per_row": 3
+      }
+    },
+    "trust-badges": {
+      "type": "text-with-icons",
+      "blocks": {
+        "badge-envio": {
+          "type": "text_block",
+          "settings": {
+            "icon": "truck",
+            "title": "Envío Express",
+            "text": "<p>Recibe el mismo día en Bogotá y Medellín.</p>"
+          }
+        },
+        "badge-seguridad": {
+          "type": "text_block",
+          "settings": {
+            "icon": "credit-cards",
+            "title": "Pagos seguros",
+            "text": "<p>Paga seguro con tarjetas y PSE.</p>"
+          }
+        },
+        "badge-regalo": {
+          "type": "text_block",
+          "settings": {
+            "icon": "gift",
+            "title": "Empaque para regalo",
+            "text": "<p>Presentación especial sin costo adicional.</p>"
+          }
+        },
+        "badge-catalogo": {
+          "type": "text_block",
+          "settings": {
+            "icon": "heart",
+            "title": "Clientes felices",
+            "text": "<p>4.9/5 en Google. Más de 616 reseñas.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "badge-envio",
+        "badge-seguridad",
+        "badge-regalo",
+        "badge-catalogo"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "align_text": "center",
+        "desktop_columns_per_row": 4,
+        "icon_color": "#1a1a1a",
+        "button_label": "",
+        "button_link": "",
+        "divider": false
       }
     },
     "colecciones-por-categoria": {
@@ -326,11 +326,12 @@
       "type": "background-image-text",
       "settings": {
         "subtitle": "",
-        "title": "Jugar es la cosa más seria que harás este fin de semana",
+        "title": "Encuentra el regalo perfecto",
         "heading_size": "h2",
-        "text": "<p>Más de 500 juegos de mesa para noches que valen la pena.</p>",
-        "button_label": "Ver juegos de mesa",
-        "button_link": "/collections/juegos-de-mesa",
+        "text": "<p>Ideas por edad, interés y ocasión para escoger más fácil.</p>",
+        "button_label": "Ver todos los productos",
+        "button_link": "shopify://collections/all",
+        "image": "shopify://shop_images/guia-regalos-editorial-desktop.png",
         "layout": "left",
         "height": 550,
         "framed": false,
@@ -399,8 +400,8 @@
   },
   "order": [
     "slideshow",
-    "trust-badges",
     "colecciones-por-edad",
+    "trust-badges",
     "colecciones-por-categoria",
     "los-mas-vendidos",
     "banner-editorial",
