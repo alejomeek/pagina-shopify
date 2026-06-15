@@ -312,6 +312,32 @@
 }
 /* === END JYE CUSTOM === */
 
+/* === JYE CUSTOM: Drawer carrito — título más compacto === */
+#CartDrawer .drawer__title {
+  font-size: 30px;
+  line-height: 1.12;
+}
+
+@media only screen and (min-width: 769px) {
+  #CartDrawer .drawer__title {
+    font-size: 34px;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: PDP — título de producto más compacto === */
+.product-single__title {
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+@media only screen and (min-width: 769px) {
+  .product-single__title {
+    font-size: 36px;
+  }
+}
+/* === END JYE CUSTOM === */
+
 /* === JYE CUSTOM: Botón flotante de WhatsApp === */
 .jye-whatsapp-btn {
   position: fixed;

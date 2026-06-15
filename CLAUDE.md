@@ -199,6 +199,30 @@ Ver `PRD.md` sección 10 para el detalle completo. Resumen:
 
 ---
 
+## Contexto de Audiencia y Comportamiento (datos Wix, mayo 2025–2026)
+
+> Estos datos provienen de la tienda anterior en Wix. Sirven como línea base para
+> decisiones de diseño y priorización. Revisarlos después de 3 meses en Shopify.
+
+**Dispositivos:**
+- 72.8% mobile · 26.8% desktop · 0.5% tablet
+- Toda decisión de diseño y CSS debe pensarse **mobile-first**
+
+**Browsers y sistema operativo:**
+- Chrome es el browser dominante (Android gama media)
+- 65% de usuarios mobile están en Android, 35% en iOS
+- Probar siempre en Chrome/Android como dispositivo primario antes de desktop
+
+**SEO — colecciones por edad:**
+- Las colecciones por edad triplican en tráfico al homepage — son el principal canal SEO del negocio
+
+**Búsqueda interna — términos más buscados:**
+- Por marca (ejemplos): Clementoni, Lego, Maisto, Catan — hay muchas más
+- Por categoría (ejemplos): Rompecabezas, Carro/Carros — hay muchas más
+- Todas las marcas y categorías del catálogo deben estar bien cubiertas en tags y metafields para que el buscador las encuentre
+
+---
+
 ## Contacto del Proyecto
 
 **Responsable:** Alejo Meek  

@@ -16,12 +16,6 @@
           "type": "price",
           "settings": {}
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "is_tab": false
-          }
-        },
         "size_chart": {
           "type": "size_chart",
           "settings": {
@@ -40,21 +34,29 @@
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": false,
+            "show_dynamic_checkout": true,
             "surface_pickup_enable": false,
             "show_gift_card_recipient": false
           }
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "is_tab": true
+          }
+        },
         "tab-1": {
           "type": "tab",
+          "disabled": true,
           "settings": {
-            "title": "Description",
+            "title": "Descripción",
             "content": "<p>[connect via dynamic source]</p>",
             "page": ""
           }
         },
         "tab-2": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "title": "Materials & Care",
             "content": "<p>[connect via dynamic source]</p>",
@@ -63,6 +65,7 @@
         },
         "tab-3": {
           "type": "tab",
+          "disabled": true,
           "settings": {
             "title": "Certifications",
             "content": "<p>[connect certification badges/images via dynamic source]</p>",
@@ -72,13 +75,14 @@
         "tab-4": {
           "type": "tab",
           "settings": {
-            "title": "Shipping & Returns",
+            "title": "Tiempos y Envíos",
             "content": "<p>something something</p>",
             "page": ""
           }
         },
         "sales_point-1": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "leaf",
             "text": "Organic cotton"
@@ -86,6 +90,7 @@
         },
         "sales_point-2": {
           "type": "sales_point",
+          "disabled": true,
           "settings": {
             "icon": "ribbon",
             "text": "Something something"
@@ -94,10 +99,10 @@
       },
       "block_order": [
         "price",
-        "description",
         "size_chart",
         "variant_picker",
         "buy_buttons",
+        "description",
         "tab-1",
         "tab-2",
         "tab-3",
@@ -121,7 +126,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "product_recommendations_heading": "You may also like",
+        "product_recommendations_heading": "También te recomendamos",
         "related_count": 5,
         "products_per_row": 5
       }
@@ -193,6 +198,7 @@
         "testimonial-4",
         "testimonial-5"
       ],
+      "disabled": true,
       "settings": {
         "title": "Hear it from them",
         "heading_size": "h2",
@@ -207,6 +213,7 @@
       "blocks": {
         "image-1": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "top_subheading": "something something",
             "title": "Sustainability",
@@ -226,6 +233,7 @@
       "block_order": [
         "image-1"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.presets.hero_optional_slideshow.name",
       "settings": {
         "section_height": "650px",
