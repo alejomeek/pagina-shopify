@@ -3,25 +3,24 @@
   var SUGGESTIONS_HTML =
     '<div class="jye-search-suggestions">' +
       '<div class="jye-search-suggestions__group">' +
-        '<h3 class="jye-search-suggestions__title">Por categoría</h3>' +
+        '<h3 class="jye-search-suggestions__title">Por edad</h3>' +
         '<ul class="jye-search-suggestions__list">' +
-          '<li><a href="/collections/juegos-de-mesa">Juegos de Mesa</a></li>' +
-          '<li><a href="/collections/rompecabezas">Rompecabezas</a></li>' +
-          '<li><a href="/collections/arte-y-manualidades">Arte y Manualidades</a></li>' +
-          '<li><a href="/collections/construccion">Construcción</a></li>' +
-          '<li><a href="/collections/estimulacion-temprana">Estimulación temprana</a></li>' +
-          '<li><a href="/collections/libros">Libros</a></li>' +
+          '<li><a href="/collections/0-2-anos">0 - 2 años</a></li>' +
+          '<li><a href="/collections/3-5-anos">3 - 5 años</a></li>' +
+          '<li><a href="/collections/6-8-anos">6 - 8 años</a></li>' +
+          '<li><a href="/collections/9-12-anos">9 - 12 años</a></li>' +
+          '<li><a href="/collections/13-anos">13+ años</a></li>' +
+          '<li><a href="/collections/adultos">Adultos</a></li>' +
         '</ul>' +
       '</div>' +
       '<div class="jye-search-suggestions__group">' +
-        '<h3 class="jye-search-suggestions__title">Por edad</h3>' +
+        '<h3 class="jye-search-suggestions__title">Por categoría</h3>' +
         '<ul class="jye-search-suggestions__list">' +
-          '<li><a href="/collections/0-a-1-anos">0 a 1 años</a></li>' +
-          '<li><a href="/collections/1-a-3-anos">1 a 3 años</a></li>' +
-          '<li><a href="/collections/3-a-5-anos">3 a 5 años</a></li>' +
-          '<li><a href="/collections/5-a-7-anos">5 a 7 años</a></li>' +
-          '<li><a href="/collections/7-a-12-anos">7 a 12 años</a></li>' +
-          '<li><a href="/collections/12-a-99-anos">12 a 99 años</a></li>' +
+          '<li><a href="/collections/juegos-de-mesa-y-rompecabezas">Juegos de Mesa y Rompecabezas</a></li>' +
+          '<li><a href="/collections/desarrollo-y-aprendizaje">Desarrollo y Aprendizaje</a></li>' +
+          '<li><a href="/collections/arte-y-ciencias">Arte y Ciencias</a></li>' +
+          '<li><a href="/collections/libros-nueva">Libros</a></li>' +
+          '<li><a href="/collections/juguetes-y-coleccionables">Juguetes y Coleccionables</a></li>' +
         '</ul>' +
       '</div>' +
     '</div>';
@@ -122,6 +121,50 @@
   } else {
     initFakeHeaderSearch();
   }
+})();
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Heroes — permitir scroll vertical sin activar swipe === */
+(function () {
+  function disableHeroSwipe() {
+    if (!window.Flickity || typeof window.Flickity.data !== 'function') return;
+
+    document.querySelectorAll('[data-section-type="slideshow-section"] .hero').forEach(function (hero) {
+      var flickity = window.Flickity.data(hero);
+      if (!flickity || flickity.options.draggable === false) return;
+
+      flickity.options.draggable = false;
+      if (typeof flickity.updateDraggable === 'function') {
+        flickity.updateDraggable();
+      }
+    });
+  }
+
+  function scheduleDisableHeroSwipe() {
+    disableHeroSwipe();
+    setTimeout(disableHeroSwipe, 250);
+    setTimeout(disableHeroSwipe, 1000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', scheduleDisableHeroSwipe);
+  } else {
+    scheduleDisableHeroSwipe();
+  }
+
+  document.addEventListener('page:loaded', scheduleDisableHeroSwipe);
+  document.addEventListener('shopify:section:load', scheduleDisableHeroSwipe);
+  window.addEventListener('pageshow', scheduleDisableHeroSwipe);
+
+  document.addEventListener('touchstart', function (event) {
+    if (!event.target.closest('[data-section-type="slideshow-section"] .hero')) return;
+    event.stopPropagation();
+  }, { capture: true, passive: true });
+
+  document.addEventListener('touchmove', function (event) {
+    if (!event.target.closest('[data-section-type="slideshow-section"] .hero')) return;
+    event.stopPropagation();
+  }, { capture: true, passive: true });
 })();
 /* === END JYE CUSTOM === */
 

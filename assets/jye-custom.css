@@ -19,6 +19,61 @@
 }
 /* === END JYE CUSTOM === */
 
+/* === JYE CUSTOM: Header desktop más compacto === */
+@media only screen and (min-width: 769px) {
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .site-header__logo {
+    margin: 4px 0;
+  }
+
+  .site-nav__link {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .jye-inline-search {
+    padding: 4px 0 6px;
+  }
+
+  .jye-inline-search__form {
+    max-width: 640px;
+    min-height: 40px;
+  }
+
+  .jye-inline-search__submit .icon {
+    height: 21px;
+    width: 21px;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Heroes — priorizar scroll vertical en mobile === */
+@media only screen and (max-width: 768px) {
+  [data-section-type="slideshow-section"] .hero,
+  [data-section-type="slideshow-section"] .flickity-viewport,
+  [data-section-type="slideshow-section"] .flickity-slider,
+  [data-section-type="slideshow-section"] .slideshow__slide {
+    touch-action: pan-y;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Home hero mobile — respetar artes verticales con texto === */
+@media only screen and (max-width: 768px) {
+  [id$="__slideshow"] .hero--mobile--auto[data-mobile-natural="true"] .hero__image-wrapper,
+  [id$="__slideshow"] .hero--mobile--auto[data-mobile-natural="true"] image-element {
+    height: 100%;
+  }
+
+  [id$="__slideshow"] .hero--mobile--auto[data-mobile-natural="true"] .hero__image {
+    object-position: top center;
+  }
+}
+/* === END JYE CUSTOM === */
+
 /* === JYE CUSTOM: Tarjeta minimalista — ocultar badges de producto === */
 .grid-product__tag {
   display: none;
@@ -212,42 +267,19 @@
     align-items: center;
     background: var(--colorNav);
     display: grid;
-    gap: 10px;
-    grid-template-columns: 54px minmax(0, 1fr) 42px 42px;
-    min-height: 78px;
+    gap: 6px;
+    grid-template-columns: 48px minmax(0, 1fr) 42px 42px;
+    min-height: 72px;
     padding: 10px 0;
   }
 
   .jye-mobile-commerce-header__logo {
     align-items: center;
     display: flex;
-    height: 54px;
+    height: 52px;
     justify-content: center;
-    overflow: hidden;
-    width: 54px;
-  }
-
-  .jye-mobile-commerce-header__logo img {
-    display: block;
-    height: 54px;
-    object-fit: contain;
-    width: 54px;
-  }
-
-  .jye-mobile-commerce-header__search {
-    margin: 0;
-    max-width: none;
-    min-height: 48px;
-    padding: 0 12px;
-  }
-
-  .jye-mobile-commerce-header__search .jye-inline-search__submit {
-    padding-right: 9px;
-  }
-
-  .jye-mobile-commerce-header__search .jye-inline-search__submit .icon {
-    height: 22px;
-    width: 22px;
+    min-width: 0;
+    text-decoration: none;
   }
 
   .jye-mobile-commerce-header__icon {
@@ -261,9 +293,33 @@
     width: 42px;
   }
 
+  .jye-mobile-commerce-header__logo img {
+    display: block;
+    max-height: 42px;
+    max-width: min(190px, 100%);
+    object-fit: contain;
+    width: auto;
+  }
+
+  .jye-mobile-commerce-header__logo span {
+    color: var(--colorNavText);
+    display: block;
+    font-size: 16px;
+    line-height: 1.1;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .jye-mobile-commerce-header__icon .icon {
     height: 28px;
     width: 28px;
+  }
+
+  .jye-mobile-commerce-header__icon .icon-search {
+    height: 26px;
+    width: 26px;
   }
 
   .jye-mobile-commerce-header__icon .cart-link {
@@ -314,13 +370,16 @@
 
 /* === JYE CUSTOM: Drawer carrito — título más compacto === */
 #CartDrawer .drawer__title {
-  font-size: 30px;
-  line-height: 1.12;
+  font-family: var(--typeBasePrimary), var(--typeBaseFallback);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.18;
 }
 
 @media only screen and (min-width: 769px) {
   #CartDrawer .drawer__title {
-    font-size: 34px;
+    font-size: 28px;
   }
 }
 /* === END JYE CUSTOM === */
@@ -427,6 +486,31 @@
   }
   [id$="__colecciones-por-edad"] .collection-item__title span {
     font-size: 1.2rem !important;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Título compacto dentro de colecciones === */
+.jye-collection-heading {
+  margin: 0 0 16px;
+  padding-top: 18px;
+}
+
+.jye-collection-heading__title {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+@media only screen and (min-width: 769px) {
+  .jye-collection-heading {
+    margin-bottom: 22px;
+    padding-top: 24px;
+  }
+
+  .jye-collection-heading__title {
+    font-size: 34px;
   }
 }
 /* === END JYE CUSTOM === */
@@ -545,6 +629,132 @@
   }
   [id$="__colecciones-por-categoria"] .collection-item__title span {
     font-size: 1.2rem !important;
+  }
+}
+/* === END JYE CUSTOM === */
+
+/* === JYE CUSTOM: Compra por edad — círculos estilo carrusel FAO === */
+[id$="__colecciones-por-edad"] .section-header {
+  margin-bottom: 20px;
+}
+
+[id$="__colecciones-por-edad"] .section-header__title {
+  line-height: 1.12;
+  text-align: center;
+}
+
+[id$="__colecciones-por-edad"] .grid {
+  display: flex;
+  gap: 22px;
+  margin-left: 0;
+}
+
+[id$="__colecciones-por-edad"] .grid__item {
+  float: none;
+  padding-left: 0;
+  width: auto;
+}
+
+[id$="__colecciones-por-edad"] .collection-item {
+  margin-bottom: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+[id$="__colecciones-por-edad"] .collection-item::after {
+  content: none;
+}
+
+[id$="__colecciones-por-edad"] .collection-image {
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(26, 26, 26, 0.13);
+  overflow: hidden;
+  padding-bottom: 100% !important;
+  padding-top: 0 !important;
+}
+
+[id$="__colecciones-por-edad"] .collection-image img {
+  border-radius: 50%;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+
+[id$="__colecciones-por-edad"] .image-element {
+  animation: none !important;
+  opacity: 1;
+}
+
+[id$="__colecciones-por-edad"] .collection-item__title {
+  bottom: auto !important;
+  display: block;
+  left: auto !important;
+  margin: 12px 0 0 !important;
+  position: static !important;
+  right: auto !important;
+  text-align: center !important;
+  top: auto !important;
+  transform: none !important;
+}
+
+[id$="__colecciones-por-edad"] .collection-item__title span {
+  background-color: transparent !important;
+  color: var(--colorTextBody) !important;
+  display: block;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0;
+  line-height: 1.15 !important;
+  padding: 0 !important;
+  text-shadow: none !important;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 768px) {
+  [id$="__colecciones-por-edad"] .section-header {
+    margin-bottom: 18px;
+  }
+
+  [id$="__colecciones-por-edad"] .section-header__title {
+    font-size: 28px;
+  }
+
+  [id$="__colecciones-por-edad"] .grid {
+    flex-wrap: nowrap;
+    gap: 18px;
+    overflow-x: auto;
+    padding: 0 0 8px;
+    scroll-padding-left: 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [id$="__colecciones-por-edad"] .grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  [id$="__colecciones-por-edad"] .grid__item {
+    flex: 0 0 42vw;
+    max-width: 168px;
+    min-width: 136px;
+    scroll-snap-align: start;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  [id$="__colecciones-por-edad"] .grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+    padding: 0;
+  }
+
+  [id$="__colecciones-por-edad"] .grid__item {
+    flex: 0 1 clamp(138px, 13vw, 174px);
+    max-width: 174px;
+  }
+
+  [id$="__colecciones-por-edad"] .collection-item__title span {
+    font-size: 14px !important;
   }
 }
 /* === END JYE CUSTOM === */

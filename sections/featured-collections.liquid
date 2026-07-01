@@ -19,6 +19,12 @@
       {%- liquid
         assign collection = collections[block.settings.collection]
         assign background_position = block.settings.focal_point
+        assign collection_image_loading = blank
+
+        # JYE CUSTOM: cargar eager las imágenes circulares de Compra por edad para evitar placeholders visibles.
+        if section.id contains 'colecciones-por-edad'
+          assign collection_image_loading = 'eager'
+        endif
 
         capture gridView
           if section.blocks.size < section.settings.per_row
@@ -37,7 +43,8 @@
         background_position: background_position,
         per_row: section.settings.per_row,
         sizeVariable: gridView,
-        fallback: 'variable'
+        fallback: 'variable',
+        loading: collection_image_loading
       -%}
     {%- endfor -%}
 

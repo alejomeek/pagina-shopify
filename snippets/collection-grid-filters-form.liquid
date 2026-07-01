@@ -1,21 +1,64 @@
 {% comment %}
 - filters: Liquid 'collection.filters' or 'search.filters' object
+- collection_handle: collection.handle
 - enable_color_swatches: boolean
 - collapsed: boolean
 {% endcomment %}
 
+{% comment %} JYE CUSTOM: contexto de colección para no repetir la misma dimensión en filtros. {% endcomment %}
+{%- liquid
+  assign current_collection_handle = collection_handle | default: ''
+  assign age_collection_handles = '0-2-anos,3-5-anos,6-8-anos,9-12-anos,13-anos,adultos' | split: ','
+  assign category_collection_handles = 'juegos-de-mesa-y-rompecabezas,juegos-de-mesa,rompecabezas,desarrollo-y-aprendizaje,estimulacion-temprana,lenguaje-y-comunicacion,logica-y-matematicas,musica-y-sonido,arte-y-ciencias,arte-y-manualidades,experimentos-y-stem,libros-nueva,cuentos-e-historias,libros-educativos,libros-de-actividades,juguetes-y-coleccionables,figuras-y-animales,vehiculos,construccion,juego-de-roles,juegos-al-aire-libre' | split: ','
+  assign brand_collection_prefix = current_collection_handle | slice: 0, 6
+  assign is_age_collection = false
+  assign is_category_collection = false
+  assign is_brand_collection = false
+
+  if age_collection_handles contains current_collection_handle
+    assign is_age_collection = true
+  endif
+
+  if category_collection_handles contains current_collection_handle
+    assign is_category_collection = true
+  endif
+
+  if brand_collection_prefix == 'marca-'
+    assign is_brand_collection = true
+  endif
+-%}
+{% comment %} END JYE CUSTOM {% endcomment %}
+
 <ul class="no-bullets tag-list tag-list--active-tags">
 {%- for filter in filters -%}
   {%- assign filter_index = forloop.index -%}
+  {% comment %} JYE CUSTOM: no mostrar chips activos de filtros ocultos por contexto. {% endcomment %}
+  {%- assign filter_label_handle = filter.label | handleize -%}
+  {%- assign hide_context_filter = false -%}
 
-  {%- for filter_value in filter.active_values -%}
-  <li class="tag tag--remove">
-    <a class="btn btn--small" href="{{ filter_value.url_to_remove }}">
-      {{ filter_value.label | escape }}
-    </a>
-    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
-  </li>
-  {%- endfor -%}
+  {%- if is_age_collection and filter_label_handle == 'edad-recomendada' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_category_collection and filter_label_handle == 'categoria' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_brand_collection and filter_label_handle == 'marca' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_brand_collection and filter_label_handle == 'vendor' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_brand_collection and filter_label_handle == 'proveedor' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- endif -%}
+  {% comment %} END JYE CUSTOM {% endcomment %}
+
+  {%- unless hide_context_filter -%}
+    {%- for filter_value in filter.active_values -%}
+    <li class="tag tag--remove">
+      <a class="btn btn--small" href="{{ filter_value.url_to_remove }}">
+        {{ filter_value.label | escape }}
+      </a>
+      <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-close" viewBox="0 0 64 64"><title>icon-X</title><path d="m19 17.61 27.12 27.13m0-27.12L19 44.74"/></svg>
+    </li>
+    {%- endfor -%}
+  {%- endunless -%}
 {%- endfor -%}
 </ul>
 
@@ -23,7 +66,24 @@
 {%- for filter in filters -%}
   {%- capture filter_id -%}filter-{{ filter.label | handleize }}{%- endcapture -%}
   {%- assign filter_index = forloop.index -%}
+  {% comment %} JYE CUSTOM: ocultar grupo de filtro si repite el contexto de navegación. {% endcomment %}
+  {%- assign filter_label_handle = filter.label | handleize -%}
+  {%- assign hide_context_filter = false -%}
 
+  {%- if is_age_collection and filter_label_handle == 'edad-recomendada' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_category_collection and filter_label_handle == 'categoria' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_brand_collection and filter_label_handle == 'marca' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_brand_collection and filter_label_handle == 'vendor' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- elsif is_brand_collection and filter_label_handle == 'proveedor' -%}
+    {%- assign hide_context_filter = true -%}
+  {%- endif -%}
+  {% comment %} END JYE CUSTOM {% endcomment %}
+
+  {%- unless hide_context_filter -%}
   <div class="collection-sidebar__group--{{ filter_index }}">
     <div class="collection-sidebar__group">
       <button
@@ -98,6 +158,13 @@
                       {%- liquid
                         assign tag_count = tag_count | plus: 1
                         assign filter_value_index = forloop.index
+                        assign hide_combined_filter_value = false
+
+                        if filter_value.label contains ','
+                          if filter_label_handle == 'categoria' or filter_label_handle == 'edad-recomendada'
+                            assign hide_combined_filter_value = true
+                          endif
+                        endif
 
                         assign color_file_name = filter_value.label | handle | append: '.' | append: swatch_file_extension
                         assign color_image = color_file_name | file_img_url: '50x50' | prepend: 'https:' | split: '?' | first
@@ -105,6 +172,8 @@
                         assign is_product_tag = false
                       -%}
 
+                      {% comment %} JYE CUSTOM: ocultar valores compuestos de Edad/Categoría generados desde metafields/listas múltiples. {% endcomment %}
+                      {%- unless hide_combined_filter_value -%}
                       <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if is_color %} tag--swatch {% if enable_swatch_labels %}tag--show-label{% endif %}{% endif %}{% if filter_value.count == 0 %} hide{% endif %}">
                         <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}">
                             <input
@@ -133,6 +202,8 @@
                             {%- endif -%}
                         </label>
                       </li>
+                      {%- endunless -%}
+                      {% comment %} END JYE CUSTOM {% endcomment %}
                     {%- endfor -%}
                   </ul>
 
@@ -176,10 +247,19 @@
                     {%- assign tag_count = filter.values.size -%}
                     {%- for filter_value in filter.values -%}
                       {%- liquid
-                      assign tag_count = tag_count | plus: 1
-                      assign filter_value_index = forloop.index
-                    -%}
+                        assign tag_count = tag_count | plus: 1
+                        assign filter_value_index = forloop.index
+                        assign hide_combined_filter_value = false
 
+                        if filter_value.label contains ','
+                          if filter_label_handle == 'categoria' or filter_label_handle == 'edad-recomendada'
+                            assign hide_combined_filter_value = true
+                          endif
+                        endif
+                      -%}
+
+                      {% comment %} JYE CUSTOM: ocultar valores compuestos de Edad/Categoría generados desde metafields/listas múltiples. {% endcomment %}
+                      {%- unless hide_combined_filter_value -%}
                       <li class="tag{% if filter_value.active %} tag--active{% endif %}{% if filter_value.count == 0 %} hide{% endif %}">
                         <label id="tag-{{ filter_value.value | handle }}" class="tag__checkbox-wrapper text-label" for="tagInput-{{ filter_value.param_name }}-{{ filter_value_index }}">
                             <input
@@ -196,6 +276,8 @@
 
                         </label>
                       </li>
+                      {%- endunless -%}
+                      {% comment %} END JYE CUSTOM {% endcomment %}
                     {%- endfor -%}
                   </ul>
 
@@ -265,5 +347,6 @@
       </div>
     </div>
   </div>
+  {%- endunless -%}
 {%- endfor -%}
 </form>

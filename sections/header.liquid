@@ -111,31 +111,40 @@
         <div class="page-width">
           {%- if settings.search_enable -%}
             <div class="jye-mobile-commerce-header">
-              <a href="{{ routes.root_url }}" class="jye-mobile-commerce-header__logo" aria-label="{{ shop.name }}">
-                <img src="{{ 'logo_JyE.jpg' | file_url }}" alt="{{ shop.name | escape }}" loading="eager">
-              </a>
+              <button
+                type="button"
+                class="jye-mobile-commerce-header__icon js-drawer-open-nav"
+                aria-controls="NavDrawer"
+                aria-label="{{ 'general.drawers.navigation' | t }}">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><title>icon-hamburger</title><path d="M7 15h51"/><path d="M7 32h43"/><path d="M7 49h51"/></svg>
+              </button>
 
-              <form action="{{ routes.search_url }}" method="get" role="search" class="jye-inline-search__form jye-mobile-commerce-header__search">
-                <input name="type" type="hidden" value="{{ settings.search_type | default: 'product' }}">
-                <label for="HeaderInlineSearchInputMobile" class="hidden-label">{{ 'general.search.title' | t }}</label>
-                <button class="jye-inline-search__submit" type="submit" aria-label="{{ 'general.search.submit' | t }}">
-                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
-                </button>
-                <input
-                  id="HeaderInlineSearchInputMobile"
-                  class="jye-inline-search__input"
-                  data-jye-fake-search
-                  type="search"
-                  name="q"
-                  value="{{ search.terms | escape }}"
-                  autocomplete="off"
-                  autocorrect="off"
-                  autocapitalize="off"
-                  spellcheck="false"
-                  enterkeyhint="search"
-                  placeholder="{{ 'general.search.placeholder' | t }}"
-                  aria-label="{{ 'general.search.title' | t }}">
-              </form>
+              {% comment %} JYE CUSTOM: logo horizontal mobile desde Shopify Admin. {% endcomment %}
+              {%- liquid
+                assign jye_mobile_logo = section.settings.logo | default: shop.brand.logo
+                assign jye_mobile_logo_alt = jye_mobile_logo.alt | default: shop.name
+                assign jye_mobile_logo_width = section.settings.mobile_logo_width | default: 160
+                assign jye_mobile_logo_2x = jye_mobile_logo_width | times: 2
+              -%}
+              <a href="{{ routes.root_url }}" class="jye-mobile-commerce-header__logo" aria-label="{{ shop.name }}">
+                {%- if jye_mobile_logo -%}
+                  {{ jye_mobile_logo
+                    | image_url: width: jye_mobile_logo_2x
+                    | image_tag:
+                      alt: jye_mobile_logo_alt,
+                      loading: 'eager',
+                      widths: '120, 160, 200, 240, 320, 400',
+                      sizes: '180px'
+                  }}
+                {%- else -%}
+                  <span>{{ shop.name }}</span>
+                {%- endif -%}
+              </a>
+              {% comment %} END JYE CUSTOM {% endcomment %}
+
+              <a href="{{ routes.search_url }}" class="jye-mobile-commerce-header__icon js-search-header" aria-label="{{ 'general.search.title' | t }}">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><title>icon-search</title><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
+              </a>
 
               <a href="{{ routes.cart_url }}" class="jye-mobile-commerce-header__icon js-drawer-open-cart" aria-controls="CartDrawer" aria-label="{{ 'layout.cart.title' | t }}" data-icon="{{ settings.cart_icon }}">
                 <span class="cart-link">
@@ -149,14 +158,6 @@
                   <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
                 </span>
               </a>
-
-              <button
-                type="button"
-                class="jye-mobile-commerce-header__icon js-drawer-open-nav"
-                aria-controls="NavDrawer"
-                aria-label="{{ 'general.drawers.navigation' | t }}">
-                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-hamburger" viewBox="0 0 64 64"><title>icon-hamburger</title><path d="M7 15h51"/><path d="M7 32h43"/><path d="M7 49h51"/></svg>
-              </button>
             </div>
           {%- endif -%}
 
@@ -178,7 +179,6 @@
 
             {%- if logo_alignment == 'center' -%}
               <div class="header-item header-item--left header-item--navigation">
-                {%- comment -%} JYE: desactivado — ícono de lupa center/center-split reemplazado por barra inline #HeaderInlineSearch
                 {%- if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' -%}
                   {%- if settings.search_enable -%}
                     <div class="site-nav small--hide">
@@ -189,7 +189,6 @@
                     </div>
                   {%- endif -%}
                 {%- endif -%}
-                {%- endcomment -%}
 
                 {%- if section.settings.main_menu_alignment == 'center-left' -%}
                   {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment, hover_menu: section.settings.hover_menu -%}
@@ -225,33 +224,6 @@
           {%- if section.settings.main_menu_alignment == 'center' -%}
             <div class="text-center">
               {%- render 'header-desktop-nav', main_menu: main_menu, dropdown_alignment: dropdown_alignment, hover_menu: section.settings.hover_menu -%}
-            </div>
-          {%- endif -%}
-
-          {%- comment -%} JYE: Barra visible estilo Retrospec — abre el predictive search original {%- endcomment -%}
-          {%- if settings.search_enable -%}
-            <div id="HeaderInlineSearch" class="jye-inline-search" data-jye-fake-search-wrap>
-              <form action="{{ routes.search_url }}" method="get" role="search" class="jye-inline-search__form">
-                <input name="type" type="hidden" value="{{ settings.search_type | default: 'product' }}">
-                <label for="HeaderInlineSearchInput" class="hidden-label">{{ 'general.search.title' | t }}</label>
-                <button class="jye-inline-search__submit" type="submit" aria-label="{{ 'general.search.submit' | t }}">
-                  <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-search" viewBox="0 0 64 64"><path d="M47.16 28.58A18.58 18.58 0 1 1 28.58 10a18.58 18.58 0 0 1 18.58 18.58ZM54 54 41.94 42"/></svg>
-                </button>
-                <input
-                  id="HeaderInlineSearchInput"
-                  class="jye-inline-search__input"
-                  data-jye-fake-search
-                  type="search"
-                  name="q"
-                  value="{{ search.terms | escape }}"
-                  autocomplete="off"
-                  autocorrect="off"
-                  autocapitalize="off"
-                  spellcheck="false"
-                  enterkeyhint="search"
-                  placeholder="{{ 'general.search.placeholder' | t }}"
-                  aria-label="{{ 'general.search.title' | t }}">
-              </form>
             </div>
           {%- endif -%}
         </div>

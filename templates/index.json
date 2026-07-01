@@ -16,92 +16,92 @@
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "Juguetes didácticos por edad",
+            "title": "",
             "title_size": 80,
-            "subheading": "Encuentra opciones para bebés, niños pequeños y grandes.",
-            "link": "shopify://collections/todas-edades",
-            "link_text": "Comprar por edad",
+            "subheading": "",
+            "link": "shopify://collections/pinzas-motricidad-fina",
+            "link_text": "",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-left",
-            "image": "shopify://shop_images/pinzas-sensoriales-motricidad-fina-heroe.png",
-            "image_mobile": "shopify://shop_images/pinzas-sensoriales-motricidad-fina-heroe-mobile.png",
+            "image": "shopify://shop_images/nino-pinzas-estimulacion-desktop.png",
+            "image_mobile": "shopify://shop_images/nino-jugando-pinzas-motricidad.png",
             "parallax_direction": "top",
-            "overlay_opacity": 20
-          }
-        },
-        "image_bmx8ag": {
-          "type": "image",
-          "settings": {
-            "top_subheading": "",
-            "title": "Rompecabezas para todas las edades",
-            "title_size": 80,
-            "subheading": "Diseños, personajes y formatos para todos los gustos.",
-            "link": "/collections/rompecabezas",
-            "link_text": "Ver rompecabezas",
-            "link_2": "",
-            "link_text_2": "",
-            "color_accent": "rgba(0,0,0,0)",
-            "text_align": "vertical-center horizontal-left",
-            "image": "shopify://shop_images/rompecabezas-clementoni-banner-horizontal.png",
-            "image_mobile": "shopify://shop_images/rompecabezas-clementoni-mobile-banner.png",
-            "parallax_direction": "top",
-            "overlay_opacity": 20
+            "overlay_opacity": 0
           }
         },
         "slide-1": {
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "Juegos de Mesa",
+            "title": "",
             "title_size": 54,
-            "subheading": "Planes para familia, amigos y tardes memorables.",
+            "subheading": "",
             "link": "/collections/juegos-de-mesa",
-            "link_text": "Ver juegos de mesa",
+            "link_text": "",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-left",
-            "image": "shopify://shop_images/catan-juego-de-mesa-banner.png",
-            "image_mobile": "shopify://shop_images/catan-juego-de-mesa-banner_mobile_d324f20e-f406-4470-bc78-1ecb5f264bc8.png",
+            "image": "shopify://shop_images/tienda-fisica-2.png",
+            "image_mobile": "shopify://shop_images/tiendas-fisicas-v4.png",
             "parallax_direction": "top",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
+          }
+        },
+        "image_bmx8ag": {
+          "type": "image",
+          "settings": {
+            "top_subheading": "",
+            "title": "",
+            "title_size": 80,
+            "subheading": "",
+            "link": "shopify://collections/rompecabezas-clementoni-adultos",
+            "link_text": "",
+            "link_2": "",
+            "link_text_2": "",
+            "color_accent": "rgba(0,0,0,0)",
+            "text_align": "vertical-center horizontal-left",
+            "image": "shopify://shop_images/clementoni-rompecabezas.png",
+            "image_mobile": "shopify://shop_images/clementoni-rompecabezas-mobile.png",
+            "parallax_direction": "top",
+            "overlay_opacity": 0
           }
         },
         "slide-2": {
           "type": "image",
           "settings": {
             "top_subheading": "",
-            "title": "Juegos rápidos y divertidos",
+            "title": "",
             "title_size": 54,
-            "subheading": "Risas, estrategia y partidas que se repiten.",
+            "subheading": "",
             "link": "/collections/juegos-de-mesa",
-            "link_text": "Ver juegos familiares",
+            "link_text": "",
             "link_2": "",
             "link_text_2": "",
             "color_accent": "rgba(0,0,0,0)",
             "text_align": "vertical-center horizontal-left",
-            "image": "shopify://shop_images/exploding-kittens-heroe.png",
-            "image_mobile": "shopify://shop_images/exploding-kittens-heroe-mobile.png",
+            "image": "shopify://shop_images/banner-explodding-kittens.png",
+            "image_mobile": "shopify://shop_images/banner-mobbile-explodding-kittens.png",
             "parallax_direction": "top",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         }
       },
       "block_order": [
         "image_p7Tq8V",
-        "image_bmx8ag",
         "slide-1",
+        "image_bmx8ag",
         "slide-2"
       ],
       "settings": {
         "section_height": "650px",
-        "mobile_height": "400px",
-        "parallax": true,
-        "style": "bars",
+        "mobile_height": "auto",
+        "parallax": false,
+        "style": "arrows",
         "autoplay": true,
-        "autoplay_speed": 5
+        "autoplay_speed": 7
       }
     },
     "colecciones-por-edad": {
@@ -110,48 +110,48 @@
         "edad-0-1": {
           "type": "collection",
           "settings": {
-            "collection": "0-a-1-anos",
-            "title": "0 a 1 años",
+            "collection": "0-2-anos",
+            "title": "0 a 2 años",
             "focal_point": "center center"
           }
         },
         "edad-1-3": {
           "type": "collection",
           "settings": {
-            "collection": "1-a-3-anos",
-            "title": "1 a 3 años",
+            "collection": "3-5-anos",
+            "title": "3 a 5 años",
             "focal_point": "center center"
           }
         },
         "edad-3-5": {
           "type": "collection",
           "settings": {
-            "collection": "3-a-5-anos",
-            "title": "3 a 5 años",
+            "collection": "6-8-anos",
+            "title": "6 a 8 años",
             "focal_point": "center center"
           }
         },
         "edad-5-7": {
           "type": "collection",
           "settings": {
-            "collection": "5-a-7-anos",
-            "title": "5 a 7 años",
+            "collection": "9-12-anos",
+            "title": "9 a 12 años",
             "focal_point": "center center"
           }
         },
         "edad-7-12": {
           "type": "collection",
           "settings": {
-            "collection": "7-a-12-anos",
-            "title": "7 a 12 años",
+            "collection": "13-anos",
+            "title": "13+ años",
             "focal_point": "center center"
           }
         },
         "edad-12-99": {
           "type": "collection",
           "settings": {
-            "collection": "12-a-99-anos",
-            "title": "12 a 99 años",
+            "collection": "adultos",
+            "title": "Adultos",
             "focal_point": "center center"
           }
         }
